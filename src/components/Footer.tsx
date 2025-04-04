@@ -37,9 +37,14 @@ export const Footer: React.FC = () => {
             © {currentYear} Rocket Video AI. All rights reserved.
           </p>
           
-          <div className="xbesh-credit flex items-center justify-center space-x-2">
-            <span className="text-xs text-gray-500">Built with</span>
-            <a href="https://www.xbesh.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
+          <div className="xbesh-credit flex justify-center">
+            <a 
+              href="https://www.xbesh.com" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="inline-flex items-center px-4 py-2 bg-gray-100 rounded-full shadow-sm hover:bg-white transition-colors duration-300"
+            >
+              <span className="text-xs text-gray-700 font-medium mr-2">Built with</span>
               <img src="https://www.xbesh.com/logos/xbesh_logo.svg" alt="xBesh Logo" className="h-5 w-auto" />
             </a>
           </div>
