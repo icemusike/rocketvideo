@@ -370,11 +370,44 @@ body {
 }
 
 .brand-logo-container {
-  @apply h-12 flex items-center justify-center mb-3;
+  @apply h-14 flex items-center justify-center mb-3 p-2 rounded-md;
+  background: rgba(255, 255, 255, 0.02);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.brand-logo-container::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.brand-logo-container:hover::before {
+  opacity: 1;
+  transform: scale(1.1);
 }
 
 .brand-logo {
-  @apply max-h-full max-w-full object-contain filter brightness-125;
+  @apply max-h-full max-w-full object-contain;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  will-change: transform, filter;
+  filter: drop-shadow(0 0 0 rgba(255, 51, 102, 0));
+}
+
+.brand-item:hover .brand-logo-container {
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 20px -5px rgba(255, 51, 102, 0.2);
+}
+
+.brand-item:hover .brand-description {
+  @apply text-white;
 }
 
 .brand-description {
