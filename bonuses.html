@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/index-9615934c.css">
+    <!-- No external CSS reference, using only inline styles -->
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-7T1BKDH68Q"></script>
     <script>
@@ -509,35 +509,10 @@
       </div>
     </footer>
 
-    <!-- Countdown Script -->
     <script>
-      // Set the date we're counting down to (April 5th at 10 AM EST)
-      function getTargetDate() {
-        const targetDate = new Date();
-        targetDate.setMonth(3); // April (0-indexed)
-        targetDate.setDate(5);
-        targetDate.setHours(10, 0, 0, 0); // 10 AM
-        
-        // Check if we're in daylight saving time
-        const isDST = () => {
-          const jan = new Date(targetDate.getFullYear(), 0, 1).getTimezoneOffset();
-          const jul = new Date(targetDate.getFullYear(), 6, 1).getTimezoneOffset();
-          return Math.max(jan, jul) !== targetDate.getTimezoneOffset();
-        };
-        
-        // Adjust hours based on if we're in DST or not (EST is UTC-5, EDT is UTC-4)
-        targetDate.setHours(targetDate.getHours() + (isDST() ? 4 : 5));
-        
-        // If target date is in the past, set it to next year
-        if (targetDate < new Date()) {
-          targetDate.setFullYear(targetDate.getFullYear() + 1);
-        }
-        
-        return targetDate;
-      }
-
-      const countDownDate = getTargetDate().getTime();
-
+      // Set the countdown date to April 5th, 2025 at 10:00 AM EST
+      const countDownDate = new Date("Apr 5, 2025 10:00:00 EST").getTime();
+      
       // Update the countdown every 1 second
       const countdownTimer = setInterval(function() {
         const now = new Date().getTime();
@@ -564,9 +539,12 @@
     </script>
 
     <!-- Vercel Analytics -->
-    <script type="module">
-      import { inject } from '@vercel/analytics';
-      inject();
+    <script>
+      // Inline Vercel Analytics
+      (function(v,e,r,c,l,a,n){
+        v['VercelAnalyticsObject']=l;v[l]=v[l]||function(){(v[l].q=v[l].q||[]).push(arguments)};
+        a=e.createElement(r);n=e.getElementsByTagName(r)[0];a.async=1;a.src=c;n.parentNode.insertBefore(a,n);
+      })(window,document,'script','/_vercel/insights/script.js','va');
     </script>
   </body>
 </html> 
