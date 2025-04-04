@@ -1,5 +1,6 @@
 {
   "routes": [
     { "src": "/bonuses", "dest": "/bonuses.html" }
-  ]
+  ],
+  "cleanUrls": true
 } 
