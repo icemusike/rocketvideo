@@ -18,9 +18,9 @@ function CountdownItem({ value, label }: { value: number; label: string }) {
 
 export default function Countdown() {
   const [timeLeft, setTimeLeft] = useState({
-    days: 3,
-    hours: 14,
-    minutes: 45,
+    days: 0,
+    hours: 23,
+    minutes: 36,
     seconds: 0
   });
 
