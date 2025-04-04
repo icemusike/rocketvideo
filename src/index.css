@@ -313,26 +313,37 @@ body {
 
 .founder-image-wrapper {
   @apply flex-shrink-0 relative;
+  position: relative;
+  width: 160px;
+  height: 160px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .founder-image-wrapper {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+.founder-image-wrapper::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  border-radius: 50%;
+  background: linear-gradient(to right, #FF3366, #FF9933);
+  z-index: 0;
 }
 
 .founder-image {
-  @apply w-40 h-40 md:w-48 md:h-48 object-cover rounded-full;
-  border: 3px solid;
-  border-image: linear-gradient(to right, #FF3366, #FF9933) 1;
+  @apply w-full h-full object-cover rounded-full;
+  position: relative;
+  z-index: 1;
+  border: 3px solid #121212;
   box-shadow: 0 10px 25px -5px rgba(255, 51, 102, 0.3);
-}
-
-.founder-image::after {
-  content: '';
-  position: absolute;
-  top: -5px;
-  left: -5px;
-  right: -5px;
-  bottom: -5px;
-  border-radius: 50%;
-  background: linear-gradient(to right, #FF3366, #FF9933);
-  z-index: -1;
-  opacity: 0.3;
 }
 
 .founder-content {
@@ -341,18 +352,24 @@ body {
 
 .founder-label {
   @apply text-xs font-bold tracking-wider text-pink-400 block mb-2;
+  letter-spacing: 0.1em;
 }
 
 .founder-name {
-  @apply text-3xl md:text-4xl font-black mb-3 gradient-text;
+  @apply text-3xl md:text-4xl font-black mb-2 gradient-text;
+}
+
+.founder-subtitle {
+  @apply text-lg md:text-xl font-bold mb-5 text-gray-200;
 }
 
 .founder-bio {
-  @apply text-sm md:text-base text-gray-300 leading-relaxed mb-8 max-w-2xl;
+  @apply text-base md:text-lg text-gray-300 leading-relaxed max-w-3xl;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .brands-title {
-  @apply text-sm font-semibold text-gray-400 mb-3;
+  @apply text-sm font-semibold text-gray-400 mb-3 mt-8;
 }
 
 .brands-grid {

@@ -56,12 +56,17 @@ export default function FounderSection() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.3 }}
               >
-                <span className="founder-label">MEET THE FOUNDER</span>
+                <span className="founder-label">FROM THE DESK OF</span>
                 <h2 className="founder-name">Adrian Isfan</h2>
+                <h3 className="founder-subtitle">Your 7-Figure AI Marketing Expert, Partner & Friend</h3>
                 <p className="founder-bio">
-                  Visionary entrepreneur and AI technology pioneer with a passion for creating innovative solutions that help businesses grow. 
+                  I'm a visionary entrepreneur and AI technology pioneer with a passion for creating 
+                  innovative solutions that help businesses like yours grow and thrive. 
+                </p>
+                <p className="founder-bio mt-4">
                   With over a decade of experience in software development and business automation, 
-                  I've built multiple successful SaaS platforms that are transforming how businesses leverage AI.
+                  I've built multiple successful SaaS platforms that are transforming how businesses 
+                  leverage AI for better results and higher profits.
                 </p>
               </motion.div>
               
