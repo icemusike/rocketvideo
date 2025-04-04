@@ -1,0 +1,5 @@
+{
+  "routes": [
+    { "src": "/bonuses", "dest": "/bonuses.html" }
+  ]
+} 
