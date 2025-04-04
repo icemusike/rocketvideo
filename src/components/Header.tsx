@@ -8,10 +8,15 @@ export const Header: React.FC = () => {
       animate={{ opacity: 1, y: 0 }}
       className="header-banner"
     >
-      <p className="header-text">
-        <span className="header-icon">🎥</span>
-        Special Video Presentation for Adrian's Inner Circle
-      </p>
+      <div className="flex justify-center items-center gap-2">
+        <div className="header-badge">EXCLUSIVE</div>
+        <p className="header-text">
+          <span className="header-icon">🎥</span>
+          <span className="hidden sm:inline font-bold mr-2">LIMITED TIME:</span>
+          Special AI Video Creation Masterclass Access Closing Soon
+        </p>
+        <div className="header-badge pulse-badge">LIVE</div>
+      </div>
     </motion.div>
   );
 };

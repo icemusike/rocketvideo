@@ -13,12 +13,13 @@ body {
 .header-banner {
   @apply fixed top-0 left-0 right-0 z-50 py-4 px-4;
   background: linear-gradient(to right, 
-    rgba(255, 51, 102, 0.15),
-    rgba(255, 153, 51, 0.15),
-    rgba(255, 51, 102, 0.15)
+    rgba(255, 51, 102, 0.3),
+    rgba(255, 153, 51, 0.3),
+    rgba(255, 51, 102, 0.3)
   );
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 153, 51, 0.2);
+  border-bottom: 1px solid rgba(255, 153, 51, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 .header-text {
@@ -32,6 +33,18 @@ body {
 .header-icon {
   @apply inline-block mr-2;
   animation: pulse 2s infinite;
+}
+
+.header-badge {
+  @apply text-xs font-bold py-1 px-3 rounded-full;
+  background: linear-gradient(to right, #FF3366, #FF9933);
+  color: white;
+  letter-spacing: 0.05em;
+}
+
+.pulse-badge {
+  animation: pulse-badge 1.5s infinite;
+  background: #22c55e;
 }
 
 /* Hero Section Styles */
@@ -100,6 +113,43 @@ body {
 .countdown-label {
   @apply text-[10px] md:text-xs font-medium uppercase tracking-wider;
   color: rgba(255, 255, 255, 0.6);
+}
+
+/* Bonus Section Styles */
+.bonus-section {
+  background: linear-gradient(180deg, rgba(13,13,13,1) 0%, rgba(21,14,30,1) 100%);
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(128, 90, 213, 0.2);
+  border-bottom: 1px solid rgba(128, 90, 213, 0.2);
+}
+
+.bonus-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(128, 90, 213, 0.15), transparent 70%);
+  pointer-events: none;
+}
+
+.bonus-feature-item {
+  @apply bg-[#1A1A1A]/60 p-6 rounded-xl backdrop-blur-sm;
+  border: 1px solid rgba(128, 90, 213, 0.2);
+  transition: all 0.3s ease;
+}
+
+.bonus-feature-item:hover {
+  @apply bg-[#1A1A1A]/80;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(128, 90, 213, 0.3);
+}
+
+.feature-icon {
+  @apply text-3xl mb-4;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
 }
 
 /* Background Animation Styles */
@@ -185,6 +235,22 @@ body {
   @apply pt-8 border-t border-gray-800/50 text-center;
 }
 
+.xbesh-credit {
+  @apply transition-opacity duration-200;
+}
+
+.xbesh-credit:hover {
+  @apply opacity-100;
+}
+
+.xbesh-credit img {
+  @apply transition-transform duration-300;
+}
+
+.xbesh-credit:hover img {
+  transform: scale(1.1);
+}
+
 /* Mesh Gradient */
 .mesh-gradient {
   position: absolute;
@@ -218,4 +284,9 @@ body {
 @keyframes pulse {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.7; }
+}
+
+@keyframes pulse-badge {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 rgba(34, 197, 94, 0.4); }
+  50% { opacity: 0.9; box-shadow: 0 0 10px rgba(34, 197, 94, 0.7); }
 }

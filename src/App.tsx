@@ -1,5 +1,6 @@
 import Hero from './components/Hero';
 import Features from './components/Features';
+import BonusSection from './components/BonusSection';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 
@@ -9,6 +10,7 @@ function App() {
       <Header />
       <Hero />
       <Features />
+      <BonusSection />
       <Footer />
     </div>
   );

@@ -33,9 +33,16 @@ export const Footer: React.FC = () => {
         </div>
 
         <div className="footer-bottom">
-          <p className="text-sm text-gray-500">
+          <p className="text-sm text-gray-500 mb-4">
             © {currentYear} Rocket Video AI. All rights reserved.
           </p>
+          
+          <div className="xbesh-credit flex items-center justify-center space-x-2">
+            <span className="text-xs text-gray-500">Built with</span>
+            <a href="https://www.xbesh.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center">
+              <img src="https://www.xbesh.com/logos/xbesh_logo.svg" alt="xBesh Logo" className="h-5 w-auto" />
+            </a>
+          </div>
         </div>
       </div>
     </footer>
