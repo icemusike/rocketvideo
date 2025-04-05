@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Exclusive bonuses for Rocket Video AI. Get access to our special bonus package valued at over $2,000 when you join today." />
-    <meta name="keywords" content="AI video bonuses, AI content creation bonus, Rocket Video AI bonuses, Adrian Isfan" />
-    <meta property="og:title" content="Rocket Video AI - Exclusive Bonuses Package" />
-    <meta property="og:description" content="Access our exclusive $2,000 value bonus package when you join Rocket Video AI today!" />
+    <meta name="description" content="Exclusive $3,885 Bonus Package for Rocket Video AI. Create stunning AI videos and get 8 powerful tools and resources when you join today." />
+    <meta name="keywords" content="AI video bonuses, RocketQR, RocketBio, RocketAcademy, RocketProof, Rocket Video AI bonuses, Adrian Isfan" />
+    <meta property="og:title" content="Rocket Video AI - $3,885 Exclusive Bonuses Package" />
+    <meta property="og:description" content="Access our exclusive $3,885 value bonus package when you join Rocket Video AI today!" />
     <meta property="og:type" content="website" />
-    <title>Rocket Video AI - Exclusive Bonuses Package</title>
+    <title>Rocket Video AI - $3,885 Exclusive Bonuses Package</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -21,8 +21,16 @@
       gtag('js', new Date());
       gtag('config', 'G-7T1BKDH68Q');
     </script>
+    <!-- Vimeo API for video control -->
+    <script src="https://player.vimeo.com/api/player.js"></script>
     <style>
       /* Additional Bonus Page Styles */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      
       body {
         background-color: #0A0A0A;
         color: white;
@@ -30,33 +38,228 @@
         margin: 0;
         padding: 0;
         overflow-x: hidden;
+        line-height: 1.6;
       }
 
+      /* Top banner for promotions */
+      .top-banner {
+        position: relative;
+        z-index: 60;
+        padding: 0.625rem 1rem;
+        background: linear-gradient(to right, rgba(255, 51, 102, 0.3), rgba(255, 153, 51, 0.3), rgba(255, 51, 102, 0.3));
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(255, 153, 51, 0.3);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      }
+      
+      /* Main navigation */
       .header-banner {
-        position: fixed;
+        position: sticky;
         top: 0;
         left: 0;
         right: 0;
         z-index: 50;
-        padding: 1rem;
-        background: linear-gradient(to right, rgba(255, 51, 102, 0.3), rgba(255, 153, 51, 0.3), rgba(255, 51, 102, 0.3));
+        padding: 0.75rem 1rem;
+        background-color: rgba(10, 10, 10, 0.95);
         backdrop-filter: blur(10px);
-        border-bottom: 1px solid rgba(255, 153, 51, 0.3);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+      }
+      
+      .header-scrolled {
+        padding: 0.5rem 1rem;
+        background-color: rgba(10, 10, 10, 0.98);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+      }
+
+      .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 1rem;
+      }
+
+      .logo {
+        font-weight: 800;
+        font-size: 1.5rem;
+        background: linear-gradient(to right, #FF3366, #FF9933);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      
+      .logo::before {
+        content: "🚀";
+        font-size: 1.25rem;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+      }
+
+      .nav-link {
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 1rem;
+        transition: all 0.3s;
+        position: relative;
+        padding: 0.25rem 0;
+      }
+
+      .nav-link:hover {
+        color: #FF3366;
+      }
+      
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(to right, #FF3366, #FF9933);
+        transition: width 0.3s ease;
+      }
+      
+      .nav-link:hover::after {
+        width: 100%;
+      }
+      
+      .nav-link.active {
+        font-weight: 600;
+        color: #FF3366;
+      }
+      
+      .nav-link.active::after {
+        width: 100%;
+      }
+
+      .nav-button {
+        background: linear-gradient(to right, #FF3366, #FF9933);
+        color: white;
+        font-weight: 600;
+        font-size: 0.9rem;
+        padding: 0.625rem 1.25rem;
+        border-radius: 0.5rem;
+        text-decoration: none;
+        transition: all 0.3s;
+        display: inline-block;
+        border: none;
+        cursor: pointer;
+        text-align: center;
+        box-shadow: 0 4px 10px rgba(255, 51, 102, 0.25);
+      }
+
+      .nav-button:hover {
+        opacity: 0.9;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 15px rgba(255, 51, 102, 0.35);
+      }
+      
+      .nav-button:active {
+        transform: translateY(1px);
+        box-shadow: 0 2px 5px rgba(255, 51, 102, 0.25);
+      }
+      
+      /* Mobile menu toggle */
+      .menu-toggle {
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 24px;
+        height: 18px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 60;
+      }
+      
+      .menu-toggle span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background: white;
+        transition: all 0.3s;
+      }
+      
+      @media (max-width: 768px) {
+        .menu-toggle {
+          display: flex;
+        }
+        
+        .nav-links {
+          position: fixed;
+          top: 0;
+          right: -100%;
+          width: 75%;
+          max-width: 300px;
+          height: 100vh;
+          background: rgba(10, 10, 10, 0.95);
+          backdrop-filter: blur(10px);
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 2rem;
+          transition: right 0.3s ease;
+          z-index: 55;
+          padding: 3rem 1rem;
+          border-left: 1px solid rgba(255, 255, 255, 0.05);
+          box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+        }
+        
+        .nav-links.active {
+          right: 0;
+        }
+        
+        .menu-toggle.active span:nth-child(1) {
+          transform: translateY(8px) rotate(45deg);
+        }
+        
+        .menu-toggle.active span:nth-child(2) {
+          opacity: 0;
+        }
+        
+        .menu-toggle.active span:nth-child(3) {
+          transform: translateY(-8px) rotate(-45deg);
+        }
       }
 
       .section-container {
         max-width: 1200px;
         margin: 0 auto;
-        padding: 0 1rem;
+        padding: 0 1.5rem;
         position: relative;
         z-index: 10;
       }
 
       .bonus-header {
-        padding: 8rem 0 4rem;
+        padding: 7rem 0 6rem;
         text-align: center;
-        background: linear-gradient(180deg, rgba(67, 56, 202, 0.3) 0%, rgba(109, 40, 217, 0.1) 100%);
+        background: linear-gradient(180deg, rgba(67, 56, 202, 0.15) 0%, rgba(109, 40, 217, 0.05) 100%);
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .bonus-header::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        background: radial-gradient(circle at 70% 30%, rgba(255, 51, 102, 0.15), transparent 70%),
+                    radial-gradient(circle at 30% 70%, rgba(255, 153, 51, 0.15), transparent 70%);
+        z-index: -1;
       }
 
       .gradient-text {
@@ -64,6 +267,7 @@
         -webkit-background-clip: text;
         background-clip: text;
         color: transparent;
+        display: inline-block;
       }
 
       .bonus-value {
@@ -74,6 +278,43 @@
         background-clip: text;
         color: transparent;
         margin: 1rem 0;
+        line-height: 1.2;
+        text-shadow: 0 2px 10px rgba(253, 230, 138, 0.2);
+      }
+      
+      .headline {
+        font-size: 2.5rem;
+        font-weight: 900;
+        line-height: 1.2;
+        margin-bottom: 1.5rem;
+        letter-spacing: -0.02em;
+      }
+      
+      @media (min-width: 768px) {
+        .headline {
+          font-size: 3.5rem;
+        }
+      }
+      
+      @media (min-width: 1024px) {
+        .headline {
+          font-size: 4.5rem;
+        }
+      }
+      
+      .subheadline {
+        font-size: 1.125rem;
+        color: #d1d5db;
+        margin-bottom: 2.5rem;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      
+      @media (min-width: 768px) {
+        .subheadline {
+          font-size: 1.25rem;
+        }
       }
 
       .bonus-grid {
@@ -89,130 +330,492 @@
         }
       }
 
+      /* Enhanced Bonus Cards */
       .bonus-card {
         background: linear-gradient(145deg, rgba(30,30,30,0.4) 0%, rgba(20,20,20,0.6) 100%);
         border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 1rem;
-        padding: 2rem;
-        transition: all 0.3s ease;
+        border-radius: 1.25rem;
+        padding: 2.5rem;
+        transition: all 0.4s ease;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        overflow: hidden;
+        height: 100%;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
+      
+      .bonus-card::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 4px;
+        top: 0;
+        left: 0;
+        background: linear-gradient(to right, #FF3366, #FF9933);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.4s ease;
       }
 
       .bonus-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.3);
-        border: 1px solid rgba(255, 255, 255, 0.2);
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+      }
+      
+      .bonus-card:hover::before {
+        transform: scaleX(1);
+      }
+
+      .bonus-card-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .bonus-image {
+        width: 100%;
+        height: auto;
+        max-width: 280px;
+        margin: 0 auto 2rem;
+        display: block;
+        border-radius: 0.75rem;
+        transform: perspective(800px) rotateY(5deg);
+        transition: all 0.6s;
+        box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.5);
+        border: 1px solid rgba(255, 255, 255, 0.1);
       }
 
       .bonus-icon {
         font-size: 2.5rem;
-        margin-bottom: 1rem;
+        margin-bottom: 1.5rem;
+        text-align: center;
+        display: inline-block;
+        background: rgba(0, 0, 0, 0.2);
+        width: 5rem;
+        height: 5rem;
+        line-height: 5rem;
+        border-radius: 50%;
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      
+      .bonus-icon::after {
+        content: "";
+        position: absolute;
+        top: -5px;
+        left: -5px;
+        right: -5px;
+        bottom: -5px;
+        border-radius: 50%;
+        background: linear-gradient(145deg, rgba(255, 51, 102, 0.1), rgba(255, 153, 51, 0.1));
+        z-index: -1;
       }
 
+      .bonus-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 0.75rem;
+        line-height: 1.2;
+      }
+      
+      .bonus-value-tag {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        background: rgba(216, 180, 254, 0.1);
+        border: 1px solid rgba(216, 180, 254, 0.2);
+        border-radius: 0.5rem;
+        color: #d8b4fe;
+        font-size: 1.125rem;
+        font-weight: 700;
+        margin-bottom: 1.25rem;
+      }
+      
+      .bonus-description {
+        color: #d1d5db;
+        margin-bottom: 1.5rem;
+        flex-grow: 1;
+      }
+      
+      .feature-list {
+        list-style: none;
+        margin-left: 0;
+        padding-left: 0;
+      }
+      
+      .feature-item {
+        position: relative;
+        padding-left: 1.75rem;
+        margin-bottom: 0.75rem;
+        color: #d1d5db;
+      }
+      
+      .feature-item::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: #22c55e;
+        font-weight: bold;
+      }
+      
+      .section-title {
+        font-size: 2rem;
+        font-weight: 800;
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+      
+      .section-subtitle {
+        color: #d1d5db;
+        margin-bottom: 3rem;
+        text-align: center;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      
+      .section-intro {
+        text-align: center;
+        max-width: 800px;
+        margin: 5rem auto 3rem;
+        padding: 0 1.5rem;
+      }
+
+      /* Enhanced Countdown Timer */
       .countdown-wrapper {
-        background: linear-gradient(180deg, rgba(26,26,26,0.4) 0%, rgba(20,20,20,0.4) 100%);
+        background: linear-gradient(145deg, rgba(30,30,30,0.4) 0%, rgba(20,20,20,0.6) 100%);
         backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 51, 102, 0.1);
-        border-radius: 0.75rem;
-        padding: 1.5rem;
-        max-width: 32rem;
-        margin: 3rem auto;
+        border: 1px solid rgba(255, 51, 102, 0.15);
+        border-radius: 1rem;
+        padding: 2rem;
+        max-width: 38rem;
+        margin: 4rem auto;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+      }
+      
+      .countdown-wrapper::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(circle at 50% 0%, rgba(255, 51, 102, 0.1), transparent 70%);
+        z-index: -1;
+      }
+      
+      .countdown-title {
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        color: white;
       }
 
       .countdown-grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: 0.75rem;
+        gap: 1rem;
       }
 
       .countdown-item {
-        background: linear-gradient(145deg, rgba(255,51,102,0.05) 0%, rgba(255,153,51,0.05) 100%);
-        border: 1px solid rgba(255, 51, 102, 0.1);
-        border-radius: 0.5rem;
-        padding: 0.75rem;
+        background: linear-gradient(145deg, rgba(40,40,40,0.4) 0%, rgba(20,20,20,0.6) 100%);
+        border: 1px solid rgba(255, 51, 102, 0.15);
+        border-radius: 0.75rem;
+        padding: 1rem 0.75rem;
         text-align: center;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        position: relative;
+        overflow: hidden;
       }
-
+      
       .countdown-number {
-        font-size: 1.875rem;
+        font-size: 2.5rem;
         font-weight: 800;
         background: linear-gradient(to right, #FF3366, #FF9933);
         -webkit-background-clip: text;
         background-clip: text;
         color: transparent;
+        display: block;
+        margin-bottom: 0.25rem;
+        line-height: 1;
       }
 
       .countdown-label {
         font-size: 0.75rem;
-        font-weight: 500;
+        font-weight: 600;
         text-transform: uppercase;
         letter-spacing: 0.05em;
         color: rgba(255, 255, 255, 0.6);
       }
 
-      .btn-primary {
-        display: inline-block;
-        padding: 1.25rem 2.5rem;
-        background: linear-gradient(to right, #FF3366, #FF9933);
-        border-radius: 0.75rem;
-        font-weight: 700;
-        font-size: 1.25rem;
-        color: white;
-        text-decoration: none;
-        text-align: center;
-        min-width: 280px;
-        margin: 0 auto;
-        transition: all 0.3s;
-        box-shadow: 0 10px 25px -5px rgba(255, 51, 102, 0.3);
-      }
-
-      .btn-primary:hover {
-        opacity: 0.9;
-        transform: scale(1.05);
-        box-shadow: 0 15px 30px -5px rgba(255, 51, 102, 0.4);
-      }
-
+      /* Enhanced Testimonial */
       .testimonial {
         font-style: italic;
         position: relative;
-        padding: 1.5rem;
-        margin: 3rem 0;
+        padding: 3.5rem 2.5rem 2.5rem;
+        margin: 5rem auto;
         max-width: 48rem;
-        margin-left: auto;
-        margin-right: auto;
+        background: linear-gradient(145deg, rgba(30,30,30,0.4) 0%, rgba(20,20,20,0.6) 100%);
+        border-radius: 1.25rem;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
       }
 
       .testimonial::before {
-        content: '"';
-        font-size: 4rem;
+        content: "\201C";
+        font-size: 6rem;
+        font-family: Georgia, serif;
         position: absolute;
-        left: -1rem;
-        top: -2rem;
-        opacity: 0.2;
+        left: 1rem;
+        top: -1.5rem;
+        color: rgba(255, 51, 102, 0.2);
+        line-height: 1;
+      }
+      
+      .testimonial-text {
+        color: #d1d5db;
+        font-size: 1.25rem;
+        line-height: 1.7;
+        margin-bottom: 1.5rem;
+      }
+      
+      .testimonial-author {
+        font-weight: 700;
+        color: white;
+        font-style: normal;
+        display: flex;
+        align-items: center;
+        margin-top: 1.5rem;
+        font-size: 1.125rem;
+      }
+      
+      .testimonial-author::before {
+        content: "";
+        display: inline-block;
+        width: 2rem;
+        height: 2px;
+        background: linear-gradient(to right, #FF3366, #FF9933);
+        margin-right: 0.75rem;
       }
 
+      /* Enhanced Guarantee Box */
       .guarantee-box {
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 1rem;
-        padding: 2rem;
-        margin: 3rem 0;
-        background: rgba(0, 0, 0, 0.2);
+        border: 1px solid rgba(253, 230, 138, 0.2);
+        border-radius: 1.25rem;
+        padding: 3rem;
+        margin: 5rem auto;
+        background: linear-gradient(145deg, rgba(30,30,30,0.4) 0%, rgba(20,20,20,0.6) 100%);
         text-align: center;
         max-width: 48rem;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .footer-wrapper {
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
         position: relative;
-        border-top: 1px solid rgba(128, 128, 128, 0.2);
-        background: linear-gradient(0deg, rgba(26,26,26,0.8) 0%, rgba(10,10,10,0.8) 100%);
-        padding: 3rem 0 1.5rem;
+        overflow: hidden;
+      }
+      
+      .guarantee-box::before {
+        content: "";
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        top: -100px;
+        right: -100px;
+        background: radial-gradient(circle, rgba(253, 230, 138, 0.15) 0%, transparent 70%);
+        border-radius: 50%;
+      }
+      
+      .guarantee-title {
+        font-size: 2rem;
+        font-weight: 800;
+        margin-bottom: 1.5rem;
+        background: linear-gradient(to right, #FDE68A, #FCD34D);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        display: inline-block;
+      }
+      
+      .guarantee-text {
+        color: #d1d5db;
+        max-width: 36rem;
+        margin: 0 auto;
+        font-size: 1.25rem;
+        line-height: 1.7;
       }
 
-      .cta-section {
-        padding: 5rem 0;
-        background: linear-gradient(to bottom, #0A0A0A 0%, rgba(30,15,50,0.9) 100%);
+      /* Founder Section */
+      .founder-section {
+        padding: 6rem 0;
+        background: linear-gradient(to bottom, rgba(10,10,10,0.5), rgba(18,18,18,0.5));
+        position: relative;
+        overflow: hidden;
+        margin: 5rem 0;
+      }
+      
+      .founder-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(circle at 30% 50%, rgba(79, 70, 229, 0.05), transparent 70%),
+                    radial-gradient(circle at 70% 50%, rgba(255, 51, 102, 0.05), transparent 70%);
+        z-index: 0;
+      }
+
+      .founder-card {
+        background: linear-gradient(145deg, rgba(30,30,30,0.4) 0%, rgba(20,20,20,0.6) 100%);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 1.5rem;
+        padding: 3rem;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        position: relative;
+        z-index: 1;
+      }
+      
+      .founder-row {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+      }
+      
+      @media (min-width: 768px) {
+        .founder-row {
+          flex-direction: row;
+          align-items: center;
+        }
+      }
+
+      .founder-image-wrapper {
+        position: relative;
+        flex-shrink: 0;
+        display: flex;
+        justify-content: center;
+      }
+
+      .founder-image {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid rgba(255, 51, 102, 0.7);
+        box-shadow: 0 10px 25px -5px rgba(255, 51, 102, 0.3),
+                    0 0 0 10px rgba(255, 51, 102, 0.1);
+        transition: all 0.3s ease;
+      }
+      
+      .founder-card:hover .founder-image {
+        transform: scale(1.05);
+        border-color: rgba(255, 51, 102, 1);
+        box-shadow: 0 15px 35px -5px rgba(255, 51, 102, 0.4),
+                    0 0 0 15px rgba(255, 51, 102, 0.15);
+      }
+
+      .founder-content {
+        flex: 1;
+      }
+
+      .founder-label {
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: #d8b4fe;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        display: block;
+        margin-bottom: 0.75rem;
+      }
+
+      .founder-name {
+        font-size: 2.75rem;
+        font-weight: 800;
+        margin-bottom: 0.5rem;
+        background: linear-gradient(to right, #FFFFFF, #FFA666);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        line-height: 1.1;
+      }
+
+      .founder-subtitle {
+        font-size: 1.375rem;
+        font-weight: 600;
+        color: #FF3366;
+        margin-bottom: 1.75rem;
+        line-height: 1.3;
+      }
+
+      .founder-bio {
+        color: #d1d5db;
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+        font-size: 1.125rem;
+      }
+
+      .brands-title {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #d8b4fe;
+        margin: 2.5rem 0 1.5rem;
+      }
+
+      .brands-grid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1.5rem;
+      }
+      
+      @media (min-width: 640px) {
+        .brands-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      .brand-item {
         text-align: center;
+      }
+
+      .brand-logo-container {
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 0.75rem;
+        padding: 1.25rem;
+        margin-bottom: 0.75rem;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        transition: all 0.3s ease;
+      }
+      
+      .brand-logo-container:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        border-color: rgba(255, 255, 255, 0.1);
+        background: rgba(10, 10, 10, 0.4);
+      }
+
+      .brand-logo {
+        max-width: 100%;
+        max-height: 45px;
+        transition: all 0.3s ease;
+      }
+      
+      .brand-logo-container:hover .brand-logo {
+        filter: brightness(1.2);
+        transform: scale(1.05);
+      }
+
+      .brand-description {
+        font-size: 0.875rem;
+        color: #9ca3af;
+        line-height: 1.4;
       }
 
       /* Background orbs for visual effect */
@@ -275,21 +878,711 @@
         0%, 100% { opacity: 1; }
         50% { opacity: 0.7; }
       }
+      
+      @keyframes shine {
+        0% { transform: translateX(-100%); }
+        20% { transform: translateX(100%); }
+        100% { transform: translateX(100%); }
+      }
 
       .pulse {
         animation: pulse 2s infinite;
       }
+
+      .cta-section {
+        padding: 6rem 0;
+        background: linear-gradient(to bottom, rgba(10,10,10,0.8) 0%, rgba(30,15,50,0.8) 100%);
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        margin-top: 4rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      
+      .cta-title {
+        font-size: 2.75rem;
+        font-weight: 800;
+        margin-bottom: 1.5rem;
+        background: linear-gradient(to right, #FFFFFF, #FFA666);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        line-height: 1.2;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      
+      .cta-subtitle {
+        font-size: 1.25rem;
+        color: #d1d5db;
+        max-width: 48rem;
+        margin: 0 auto 2.5rem;
+        line-height: 1.6;
+      }
+      
+      .cta-button {
+        display: inline-block;
+        padding: 1.25rem 2.5rem;
+        background: linear-gradient(to right, #FF3366, #FF9933);
+        border-radius: 0.75rem;
+        font-weight: 700;
+        font-size: 1.25rem;
+        color: white;
+        text-decoration: none;
+        text-align: center;
+        min-width: 280px;
+        margin: 0 auto 1.5rem;
+        transition: all 0.3s;
+        box-shadow: 0 10px 25px -5px rgba(255, 51, 102, 0.3);
+        border: none;
+        position: relative;
+        overflow: hidden;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+      
+      .cta-button::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transition: all 0.5s;
+        z-index: -1;
+      }
+
+      .cta-button:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px -5px rgba(255, 51, 102, 0.4);
+      }
+      
+      .cta-button:hover::before {
+        left: 100%;
+      }
+      
+      .cta-button:active {
+        transform: translateY(-2px);
+      }
+      
+      .cta-note {
+        font-size: 0.875rem;
+        color: #9ca3af;
+        margin-top: 1.5rem;
+        font-style: italic;
+      }
+      
+      .mini-countdown {
+        max-width: 32rem;
+        margin: 3rem auto 0;
+      }
+      
+      .countdown-mini-title {
+        font-size: 1.125rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: #d1d5db;
+      }
+
+      .footer-wrapper {
+        position: relative;
+        border-top: 1px solid rgba(128, 128, 128, 0.2);
+        background: linear-gradient(0deg, rgba(10,10,10,1) 0%, rgba(20,20,20,0.9) 100%);
+        padding: 5rem 0 2rem;
+      }
+      
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        margin-bottom: 3rem;
+      }
+      
+      @media (min-width: 768px) {
+        .footer-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      
+      .footer-logo {
+        font-size: 1.75rem;
+        font-weight: 800;
+        background: linear-gradient(to right, #FF3366, #FF9933);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        display: inline-block;
+        margin-bottom: 1rem;
+      }
+      
+      .footer-description {
+        font-size: 0.9375rem;
+        color: #9ca3af;
+        max-width: 20rem;
+        line-height: 1.7;
+      }
+      
+      .footer-links-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+      }
+      
+      .footer-links-title {
+        font-size: 0.9375rem;
+        font-weight: 600;
+        color: #d1d5db;
+        margin-bottom: 1.25rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+      
+      .footer-links-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      
+      .footer-link-item {
+        margin-bottom: 0.9375rem;
+      }
+      
+      .footer-link {
+        font-size: 0.9375rem;
+        color: #9ca3af;
+        text-decoration: none;
+        transition: all 0.2s;
+      }
+      
+      .footer-link:hover {
+        color: #FF3366;
+      }
+      
+      .footer-divider {
+        padding-top: 2.5rem;
+        border-top: 1px solid rgba(75, 85, 99, 0.3);
+        text-align: center;
+      }
+      
+      .footer-copyright {
+        font-size: 0.875rem;
+        color: #6b7280;
+        margin-bottom: 1.5rem;
+      }
+      
+      .footer-badge {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.5rem 1rem;
+        background-color: #f3f4f6;
+        border-radius: 9999px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        text-decoration: none;
+      }
+      
+      .footer-badge:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+      }
+      
+      .footer-badge-text {
+        font-size: 0.75rem;
+        color: #374151;
+        font-weight: 500;
+        margin-right: 0.5rem;
+      }
+      
+      .footer-badge-image {
+        height: 1.25rem;
+        width: auto;
+      }
+
+      /* Background orbs for visual effect */
+      .animated-gradient {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        pointer-events: none;
+        opacity: 0.6;
+        z-index: -1;
+      }
+
+      .gradient-orb {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(90px);
+        mix-blend-mode: soft-light;
+        animation: float 20s ease-in-out infinite;
+        opacity: 0.5;
+      }
+
+      .orb-1 {
+        background: radial-gradient(circle at center, #FF3366 0%, transparent 70%);
+        width: 700px;
+        height: 700px;
+        top: -300px;
+        left: -200px;
+        animation-delay: -2s;
+      }
+
+      .orb-2 {
+        background: radial-gradient(circle at center, #FF9933 0%, transparent 70%);
+        width: 600px;
+        height: 600px;
+        top: -200px;
+        right: -200px;
+        animation-delay: -1s;
+      }
+
+      .orb-3 {
+        background: radial-gradient(circle at center, #4F46E5 0%, transparent 70%);
+        width: 500px;
+        height: 500px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        animation-delay: -3s;
+      }
+
+      /* Animations */
+      @keyframes float {
+        0%, 100% { transform: translate(0, 0); }
+        25% { transform: translate(-40px, 40px); }
+        50% { transform: translate(40px, -40px); }
+        75% { transform: translate(40px, 40px); }
+      }
+
+      @keyframes pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.7; }
+      }
+      
+      @keyframes shine {
+        0% { transform: translateX(-100%); }
+        20% { transform: translateX(100%); }
+        100% { transform: translateX(100%); }
+      }
+
+      .pulse {
+        animation: pulse 2s infinite;
+      }
+      
+      @keyframes spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      
+      .spin {
+        animation: spin 20s linear infinite;
+      }
+      
+      /* Add blur scroll effect */
+      .blur-header {
+        backdrop-filter: blur(10px);
+      }
+      
+      /* Add highlight glow effect */
+      .glow {
+        box-shadow: 0 0 20px rgba(255, 51, 102, 0.5);
+      }
+
+      /* Fix for missing button styling */
+      .btn-primary {
+        display: inline-block;
+        padding: 1.25rem 2.5rem;
+        background: linear-gradient(to right, #FF3366, #FF9933);
+        border-radius: 0.75rem;
+        font-weight: 700;
+        font-size: 1.25rem;
+        color: white;
+        text-decoration: none;
+        text-align: center;
+        min-width: 280px;
+        margin: 0 auto;
+        transition: all 0.3s;
+        box-shadow: 0 10px 25px -5px rgba(255, 51, 102, 0.3);
+        border: none;
+        position: relative;
+        overflow: hidden;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+      
+      .btn-primary:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px -5px rgba(255, 51, 102, 0.4);
+      }
+      
+      .btn-primary:active {
+        transform: translateY(-2px);
+      }
+      
+      .btn-primary::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transition: all 0.5s;
+        z-index: -1;
+      }
+      
+      .btn-primary:hover::before {
+        left: 100%;
+      }
+
+      /* Hero section enhancements */
+      @keyframes fadeIn {
+        0% { opacity: 0; transform: translateY(20px); }
+        100% { opacity: 1; transform: translateY(0); }
+      }
+      
+      @keyframes floatSlow {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+      }
+      
+      @keyframes pulseGlow {
+        0%, 100% { opacity: 0.3; }
+        50% { opacity: 0.7; }
+      }
+      
+      .hero-badge {
+        animation: fadeIn 0.8s ease forwards, floatSlow 5s ease-in-out infinite;
+        animation-delay: 0.2s;
+        opacity: 0;
+      }
+      
+      .hero-headline {
+        animation: fadeIn 0.8s ease forwards;
+        animation-delay: 0.4s;
+        opacity: 0;
+      }
+      
+      .hero-subheadline {
+        animation: fadeIn 0.8s ease forwards;
+        animation-delay: 0.6s;
+        opacity: 0;
+      }
+      
+      .hero-video {
+        animation: fadeIn 0.8s ease forwards;
+        animation-delay: 0.8s;
+        opacity: 0;
+      }
+      
+      .hero-cta {
+        animation: fadeIn 0.8s ease forwards;
+        animation-delay: 1s;
+        opacity: 0;
+      }
+      
+      .hero-glow {
+        animation: pulseGlow 3s ease-in-out infinite;
+      }
+      
+      .hero-trust {
+        animation: fadeIn 0.8s ease forwards;
+        animation-delay: 1.2s;
+        opacity: 0;
+      }
+      
+      /* Mobile responsiveness for hero */
+      @media (max-width: 768px) {
+        .hero-headline {
+          font-size: 2.5rem !important;
+          padding: 0 1rem !important;
+        }
+        
+        .hero-subheadline {
+          font-size: 1.125rem !important;
+          padding: 0 1rem !important;
+        }
+        
+        .hero-play-button {
+          width: 60px !important;
+          height: 60px !important;
+        }
+        
+        .hero-play-button div {
+          border-top: 12px solid transparent !important;
+          border-bottom: 12px solid transparent !important;
+          border-left: 18px solid white !important;
+        }
+        
+        .hero-trust {
+          flex-direction: column !important;
+          gap: 0.75rem !important;
+        }
+        
+        .btn-primary {
+          min-width: 280px !important;
+          width: calc(100% - 2rem) !important;
+          max-width: 340px !important;
+          font-size: 1.25rem !important;
+          padding: 1.25rem 1.5rem !important;
+        }
+        
+        .hero-badge {
+          margin-bottom: 1.5rem !important;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        .hero-headline {
+          font-size: 2rem !important;
+        }
+        
+        .hero-subheadline {
+          font-size: 1rem !important;
+        }
+        
+        .hero-play-button {
+          width: 50px !important;
+          height: 50px !important;
+        }
+        
+        .hero-play-button div {
+          border-top: 10px solid transparent !important;
+          border-bottom: 10px solid transparent !important;
+          border-left: 15px solid white !important;
+        }
+        
+        .btn-primary {
+          min-width: 250px !important;
+          font-size: 1.125rem !important;
+          padding: 1.1rem 1.25rem !important;
+        }
+        
+        .btn-primary span:last-child {
+          font-size: 0.8rem !important;
+        }
+      }
+
+      /* Video container fixes */
+      .video-container {
+        position: relative;
+        margin: 0 auto;
+        border-radius: 1rem;
+        overflow: hidden;
+        background-color: #000;
+        width: 100%;
+        max-width: 56rem;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      
+      .video-frame-wrapper {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+        height: 0;
+        width: 100%;
+        overflow: hidden;
+      }
+      
+      .video-frame {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+      
+      .video-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.3);
+        z-index: 10;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.3s ease;
+      }
+      
+      .video-overlay:hover {
+        background: rgba(0, 0, 0, 0.15);
+      }
+      
+      .hero-play-button {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(to right, #FF3366, #FF9933);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 10px 30px rgba(255, 51, 102, 0.4);
+        position: relative;
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      
+      .hero-play-button:hover {
+        transform: scale(1.05);
+        box-shadow: 0 15px 35px rgba(255, 51, 102, 0.5);
+      }
+
+      /* Hero video container specific styles */
+      .hero-video {
+        position: relative;
+        margin: 0 auto 3.5rem;
+        width: 100%;
+        max-width: 56rem;
+      }
+      
+      .hero-video .video-container {
+        margin: 0 auto;
+        width: 100%;
+      }
+      
+      /* Enhanced CTA Button */
+      .hero-cta-button {
+        display: block;
+        padding: 1.5rem 3rem;
+        width: 100%;
+        min-width: 360px;
+        max-width: 420px;
+        margin: 0 auto;
+        font-size: 1.375rem;
+        font-weight: 800;
+        letter-spacing: 0.05em;
+        border-radius: 0.75rem;
+        background: linear-gradient(to right, #FF3366, #FF9933);
+        color: white;
+        text-decoration: none;
+        text-align: center;
+        box-shadow: 0 15px 30px -8px rgba(255, 51, 102, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.3);
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s ease, transform 0.2s ease;
+        border: none;
+        cursor: pointer;
+        z-index: 1;
+      }
+      
+      .hero-cta-button:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px -10px rgba(255, 51, 102, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.3);
+      }
+      
+      .hero-cta-button:active {
+        transform: translateY(-2px);
+      }
+      
+      .hero-cta-button::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transition: all 0.5s;
+        z-index: -1;
+      }
+      
+      .hero-cta-button:hover::before {
+        left: 100%;
+      }
+
+      @media (max-width: 768px) {
+        .hero-video {
+          margin: 0 -1rem 2.5rem;
+          max-width: none;
+          width: auto;
+        }
+        
+        .video-container {
+          border-radius: 0;
+          max-width: none;
+        }
+        
+        .hero-play-button {
+          width: 60px;
+          height: 60px;
+        }
+        
+        .hero-play-button div {
+          border-top-width: 12px;
+          border-bottom-width: 12px;
+          border-left-width: 18px;
+        }
+      }
+      
+      @media (min-width: 769px) {
+        .hero-video {
+          padding: 0 1rem;
+        }
+      }
+      
+      /* Fix video container centering */
+      .section-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+        position: relative;
+        z-index: 10;
+        width: 100%;
+      }
+      
+      .hero-video {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .video-container {
+        aspect-ratio: 16 / 9;
+        width: 100%;
+      }
+      
+      .video-frame-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
     </style>
   </head>
   <body>
+    <!-- Navigation -->
+    <nav class="header-banner" id="main-nav">
+      <div class="nav-container">
+        <a href="/" class="logo">Rocket Video AI</a>
+        <button class="menu-toggle" id="menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="nav-links" id="nav-menu">
+          <a href="/" class="nav-link">Home</a>
+          <a href="/bonuses.html" class="nav-link active">Bonuses</a>
+          <a href="https://creativio.io/Join-RocketVideosAI" class="nav-button">Get Started</a>
+        </div>
+      </div>
+    </nav>
+
     <!-- Header Banner -->
-    <div class="header-banner">
-      <div style="display: flex; justify-content: center; align-items: center; gap: 0.5rem;">
+    <div class="top-banner" style="text-align: center; padding: 0.75rem 1rem; background: linear-gradient(to right, rgba(255, 51, 102, 0.3), rgba(255, 153, 51, 0.3), rgba(255, 51, 102, 0.3)); margin-top: 0; position: relative; z-index: 40;">
+      <div style="display: flex; justify-content: center; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
         <div style="background: linear-gradient(to right, #FF3366, #FF9933); color: white; font-size: 0.75rem; font-weight: 700; padding: 0.25rem 0.75rem; border-radius: 9999px; letter-spacing: 0.05em;">EXCLUSIVE</div>
-        <p style="background: linear-gradient(to right, #FFFFFF, #FFA666); -webkit-background-clip: text; background-clip: text; color: transparent; font-size: 1rem; font-weight: 600; text-align: center;">
+        <p style="background: linear-gradient(to right, #FFFFFF, #FFA666); -webkit-background-clip: text; background-clip: text; color: transparent; font-size: 1.125rem; font-weight: 700; text-align: center; margin: 0;">
           <span class="pulse" style="display: inline-block; margin-right: 0.5rem;">🎁</span>
-          <span class="hidden sm:inline font-bold mr-2">LIMITED TIME:</span>
-          $2,000 Bonus Package Expires Soon
+          <span style="display: inline-block; margin-right: 0.5rem;">LIMITED TIME:</span>
+          $3,885 Bonus Package Expires Soon
         </p>
         <div style="background: #22c55e; color: white; font-size: 0.75rem; font-weight: 700; padding: 0.25rem 0.75rem; border-radius: 9999px; letter-spacing: 0.05em; animation: pulse 1.5s infinite;">LIVE</div>
       </div>
@@ -298,14 +1591,129 @@
     <!-- Main Content -->
     <main>
       <!-- Bonus Header -->
-      <section class="bonus-header">
-        <div class="section-container">
-          <p class="text-sm font-bold tracking-wider text-purple-400 uppercase">EXCLUSIVE LIMITED-TIME OFFER</p>
-          <h1 class="text-4xl md:text-5xl lg:text-6xl font-black mb-4">Rocket Video AI Bonuses</h1>
-          <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-            Join today and unlock these exclusive bonuses valued at over
+      <section class="bonus-header" style="padding: 7rem 0 6rem; position: relative; overflow: hidden; background: radial-gradient(ellipse at bottom, rgba(30, 20, 60, 0.2), transparent 80%);">
+        <!-- Visual elements for enhanced design -->
+        <div style="position: absolute; top: -20%; right: -10%; width: 80%; height: 80%; background: radial-gradient(circle at center, rgba(255, 51, 102, 0.15), transparent 70%); z-index: 0; filter: blur(80px);"></div>
+        <div style="position: absolute; bottom: -30%; left: -15%; width: 80%; height: 80%; background: radial-gradient(circle at center, rgba(255, 153, 51, 0.15), transparent 70%); z-index: 0; filter: blur(80px);"></div>
+        
+        <!-- Decorative elements -->
+        <div style="position: absolute; top: 15%; right: 5%; width: 300px; height: 300px; background: radial-gradient(circle at center, rgba(255, 51, 102, 0.05), transparent 70%); border: 1px solid rgba(255, 51, 102, 0.1); border-radius: 50%; transform: rotate(-15deg); z-index: 0;"></div>
+        <div style="position: absolute; bottom: 10%; left: 5%; width: 250px; height: 250px; background: radial-gradient(circle at center, rgba(255, 153, 51, 0.05), transparent 70%); border: 1px solid rgba(255, 153, 51, 0.1); border-radius: 50%; transform: rotate(15deg); z-index: 0;"></div>
+        
+        <!-- Animated particles -->
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 1; overflow: hidden; pointer-events: none;" class="particles-container"></div>
+        
+        <div class="section-container" style="position: relative; z-index: 10;">
+          <!-- Badge -->
+          <div class="hero-badge" style="background: linear-gradient(145deg, rgba(109, 40, 217, 0.15), rgba(139, 92, 246, 0.05)); backdrop-filter: blur(10px); border-radius: 9999px; padding: 0.625rem 1.75rem; display: inline-block; margin-bottom: 2rem; border: 1px solid rgba(139, 92, 246, 0.2); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);">
+            <p style="font-size: 0.875rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #d8b4fe; margin: 0;">⭐ EXCLUSIVE OPPORTUNITY</p>
+          </div>
+          
+          <!-- Headline with enhanced styling -->
+          <h1 class="hero-headline" style="font-size: 3.5rem; font-weight: 900; line-height: 1.1; max-width: 60rem; margin: 0 auto 1.5rem; letter-spacing: -0.02em; text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);">
+            <span style="display: block; margin-bottom: 0.5rem;">Unlock Your <span class="gradient-text" style="font-weight: 900; position: relative; z-index: 1;">$3,885</span> Worth</span>
+            <span style="display: block; position: relative;">of Exclusive Bonuses<span style="position: absolute; bottom: 8px; left: 0; right: 0; height: 12px; background: rgba(255, 51, 102, 0.15); z-index: -1; border-radius: 9999px;"></span></span>
+          </h1>
+          
+          <!-- Enhanced Subheadline -->
+          <p class="hero-subheadline" style="font-size: 1.35rem; color: rgba(255, 255, 255, 0.85); max-width: 56rem; margin: 0 auto 3rem; line-height: 1.5; font-weight: 400; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);">
+            When you join Rocket Video AI today, you'll get <strong>instant access</strong> to our complete suite of 
+            powerful tools and resources designed to maximize your success with AI video creation.
           </p>
-          <div class="bonus-value">$2,000</div>
+          
+          <!-- Video Container with Enhanced Styling -->
+          <div class="hero-video" style="position: relative; margin-bottom: 3.5rem;">
+            <!-- Background style element for the video -->
+            <div class="hero-glow" style="position: absolute; top: -20px; right: -20px; bottom: -20px; left: -20px; background: linear-gradient(145deg, rgba(255, 51, 102, 0.1), rgba(255, 153, 51, 0.1)); filter: blur(40px); border-radius: 1.5rem; z-index: -1;"></div>
+            
+            <!-- Corner accents for video -->
+            <div style="position: absolute; top: -10px; left: -10px; width: 30px; height: 30px; border-top: 2px solid rgba(255, 51, 102, 0.3); border-left: 2px solid rgba(255, 51, 102, 0.3); border-top-left-radius: 8px;"></div>
+            <div style="position: absolute; top: -10px; right: -10px; width: 30px; height: 30px; border-top: 2px solid rgba(255, 51, 102, 0.3); border-right: 2px solid rgba(255, 51, 102, 0.3); border-top-right-radius: 8px;"></div>
+            <div style="position: absolute; bottom: -10px; left: -10px; width: 30px; height: 30px; border-bottom: 2px solid rgba(255, 153, 51, 0.3); border-left: 2px solid rgba(255, 153, 51, 0.3); border-bottom-left-radius: 8px;"></div>
+            <div style="position: absolute; bottom: -10px; right: -10px; width: 30px; height: 30px; border-bottom: 2px solid rgba(255, 153, 51, 0.3); border-right: 2px solid rgba(255, 153, 51, 0.3); border-bottom-right-radius: 8px;"></div>
+            
+            <div class="video-container">
+              <!-- Video overlay gradients -->
+              <div style="position: absolute; top: 0; left: 0; right: 0; height: 80px; background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), transparent); z-index: 5; pointer-events: none;"></div>
+              <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 80px; background: linear-gradient(to top, rgba(0, 0, 0, 0.3), transparent); z-index: 5; pointer-events: none;"></div>
+              
+              <!-- Fixed iframe using structured classes -->
+              <div class="video-frame-wrapper">
+                <iframe 
+                  id="hero-video"
+                  class="video-frame"
+                  src="https://player.vimeo.com/video/1072267532?badge=0&autopause=0&player_id=0&app_id=58479"
+                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+                  title="Interview RocketVideos - Adrian - Tim"
+                ></iframe>
+              </div>
+              
+              <!-- Clickable play button overlay -->
+              <div id="video-overlay" class="video-overlay">
+                <div class="hero-play-button">
+                  <div style="width: 0; height: 0; border-top: 15px solid transparent; border-bottom: 15px solid transparent; border-left: 24px solid white; margin-left: 6px;"></div>
+                  
+                  <!-- Pulsing effect around play button -->
+                  <div style="position: absolute; top: -8px; left: -8px; right: -8px; bottom: -8px; border-radius: 50%; border: 2px solid rgba(255, 255, 255, 0.3); animation: pulse 2s infinite;"></div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Caption below video -->
+            <p style="text-align: center; color: rgba(255, 255, 255, 0.6); font-size: 0.875rem; margin-top: 1rem; font-style: italic;">
+              Watch how these bonuses will transform your AI video creation
+            </p>
+          </div>
+          
+          <!-- Enhanced CTA Button with Effects -->
+          <div class="hero-cta" style="text-align: center; position: relative; z-index: 5;">
+            <div style="position: relative; display: inline-block; width: 100%; max-width: 420px;">
+              <!-- Button glow effect -->
+              <div class="hero-glow" style="position: absolute; top: -10px; left: -10px; right: -10px; bottom: -10px; background: radial-gradient(circle at center, rgba(255, 51, 102, 0.3), transparent 70%); filter: blur(20px); border-radius: 1rem; z-index: -1;"></div>
+              
+              <a href="https://creativio.io/Join-RocketVideosAI" class="hero-cta-button">
+                <span style="position: relative; z-index: 2;">GET ALL BONUSES NOW</span>
+                <span style="display: block; font-size: 0.925rem; font-weight: 500; opacity: 0.9; margin-top: 0.35rem; position: relative; z-index: 2;">WORTH $3,885 IN VALUE</span>
+                
+                <!-- Button highlight effect -->
+                <span style="position: absolute; top: 0; left: 0; right: 0; height: 40%; background: linear-gradient(to bottom, rgba(255, 255, 255, 0.15), transparent); border-top-left-radius: 0.75rem; border-top-right-radius: 0.75rem;"></span>
+              </a>
+            </div>
+            
+            <!-- Limited offer badge -->
+            <div style="position: absolute; top: -20px; right: 20px; background: linear-gradient(to right, #FF3366, #FF9933); color: white; font-size: 0.75rem; font-weight: 700; padding: 0.35rem 0.85rem; border-radius: 9999px; letter-spacing: 0.05em; box-shadow: 0 4px 15px rgba(255, 51, 102, 0.3); animation: floatSlow 3s ease-in-out infinite; transform-origin: center; z-index: 10; display: flex; align-items: center; gap: 0.35rem;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              LIMITED TIME
+            </div>
+            
+            <!-- Trust indicators below CTA -->
+            <div class="hero-trust" style="margin-top: 1.75rem; display: flex; justify-content: center; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
+              <div style="display: flex; align-items: center; gap: 0.5rem;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+                <span style="color: rgba(255, 255, 255, 0.75); font-size: 0.875rem;">Instant Access</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.5rem;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+                <span style="color: rgba(255, 255, 255, 0.75); font-size: 0.875rem;">30-Day Guarantee</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.5rem;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+                <span style="color: rgba(255, 255, 255, 0.75); font-size: 0.875rem;">Limited-Time Offer</span>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -318,16 +1726,23 @@
         </div>
 
         <!-- Intro Text -->
-        <div style="text-align: center; max-width: 48rem; margin: 4rem auto 2rem;">
-          <p class="text-xl text-gray-300 leading-relaxed">
-            I'm thrilled to offer you these powerful bonuses that will accelerate your success with Rocket Video AI. 
-            These are proven tools and resources that complement our main platform perfectly.
+        <div style="text-align: center; max-width: 48rem; margin: 5rem auto 3rem; padding: 2rem; background: linear-gradient(145deg, rgba(30,30,30,0.2) 0%, rgba(20,20,20,0.3) 100%); border-radius: 1rem; border: 1px solid rgba(255, 255, 255, 0.05);">
+          <h2 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 1.5rem; line-height: 1.2;">What's Included In Your <span class="gradient-text">Bonus Package</span></h2>
+          <p style="font-size: 1.25rem; color: #d1d5db; line-height: 1.6;">
+            I've carefully curated these 8 high-value bonuses to complement Rocket Video AI and help you
+            get faster results. These tools and resources are worth <strong style="color: #FCD34D;">$3,885</strong>, but you get them all for <strong style="color: #22c55e;">FREE</strong>
+            when you join today.
           </p>
         </div>
 
         <!-- Countdown Timer -->
-        <div class="countdown-wrapper">
-          <h3 style="text-align: center; font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem;">This Offer Expires In:</h3>
+        <div class="countdown-wrapper" style="max-width: 44rem; margin: 4rem auto; padding: 2.5rem;">
+          <div style="position: absolute; top: -25px; left: 50%; transform: translateX(-50%); background: linear-gradient(to right, #FF3366, #FF9933); color: white; font-weight: 700; padding: 0.5rem 1.5rem; border-radius: 9999px; z-index: 10; white-space: nowrap; letter-spacing: 0.05em; font-size: 0.875rem; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);">
+            LIMITED TIME OFFER
+          </div>
+          
+          <h3 style="text-align: center; font-size: 1.75rem; font-weight: 700; margin-bottom: 1.5rem;">This Offer Expires In:</h3>
+          
           <div class="countdown-grid" id="countdown">
             <div class="countdown-item">
               <div class="countdown-number" id="days">00</div>
@@ -346,116 +1761,476 @@
               <div class="countdown-label">Seconds</div>
             </div>
           </div>
+          
+          <p style="text-align: center; margin-top: 1.5rem; color: #d1d5db; font-size: 1rem;">
+            After that, these bonuses will no longer be available at this price.
+          </p>
         </div>
 
         <!-- Bonuses Grid -->
         <div class="bonus-grid">
-          <!-- Bonus 1 -->
+          <!-- Bonus 1: RocketQR -->
           <div class="bonus-card">
-            <div class="bonus-icon">🎬</div>
-            <h3 class="gradient-text text-2xl font-bold mb-2">Pro Video Templates Pack</h3>
-            <div style="color: #d8b4fe; font-size: 1.125rem; font-weight: 700; margin-bottom: 1rem;">Value: $497</div>
-            <p style="color: #d1d5db; margin-bottom: 1rem;">
-              Get 50+ professionally designed video templates specifically optimized for AI generation. 
-              These templates are proven to drive engagement and are ready to use with just a few clicks.
-            </p>
-            <ul style="color: #d1d5db; margin-left: 1.5rem;">
-              <li style="margin-bottom: 0.5rem;">✓ Social media optimized formats</li>
-              <li style="margin-bottom: 0.5rem;">✓ High-conversion sales templates</li>
-              <li style="margin-bottom: 0.5rem;">✓ Educational and training layouts</li>
-              <li style="margin-bottom: 0.5rem;">✓ Exclusive designs not available anywhere else</li>
-            </ul>
+            <div class="bonus-card-content">
+              <img src="images/qr.png" alt="RocketQR" class="bonus-image" />
+              <div style="position: absolute; top: 20px; right: 20px; background: linear-gradient(135deg, #22c55e, #16a34a); color: white; font-size: 0.75rem; font-weight: 800; padding: 0.4rem 1rem; border-radius: 30px; letter-spacing: 0.05em; box-shadow: 0 10px 20px rgba(34, 197, 94, 0.3); transform: rotate(0deg); backdrop-filter: blur(5px); border: 1px solid rgba(255, 255, 255, 0.2); text-transform: uppercase; display: flex; align-items: center; justify-content: center;">
+                <span style="margin-right: 4px; font-size: 0.875rem;">🎁</span> Yours FREE
+              </div>
+              <h3 class="gradient-text text-2xl font-bold mb-2">RocketQR</h3>
+              <div style="color: #d8b4fe; font-size: 1.125rem; font-weight: 700; margin-bottom: 1rem;">Value: $497</div>
+              <p style="color: #d1d5db; margin-bottom: 1rem;">
+                Get everything you'll ever need from a URL shortener and QR code generator in one powerful tool.
+              </p>
+              <ul style="color: #d1d5db; margin-left: 1.5rem;">
+                <li style="margin-bottom: 0.5rem;">✓ Advanced URL shortener with tracking pixels</li>
+                <li style="margin-bottom: 0.5rem;">✓ Scheduling, password protection, and targeting options</li>
+                <li style="margin-bottom: 0.5rem;">✓ Generate static & dynamic QR codes with 13 different types</li>
+                <li style="margin-bottom: 0.5rem;">✓ Custom colors, gradients, shapes, and logo branding</li>
+              </ul>
+            </div>
           </div>
 
-          <!-- Bonus 2 -->
+          <!-- Bonus 2: RocketBio -->
           <div class="bonus-card">
-            <div class="bonus-icon">🎙️</div>
-            <h3 class="gradient-text text-2xl font-bold mb-2">Premium Voice Library</h3>
-            <div style="color: #d8b4fe; font-size: 1.125rem; font-weight: 700; margin-bottom: 1rem;">Value: $347</div>
-            <p style="color: #d1d5db; margin-bottom: 1rem;">
-              Access our exclusive collection of 100+ premium AI voices not available in the standard package. 
-              These voices have been handpicked for their clarity, emotion, and professional sound quality.
-            </p>
-            <ul style="color: #d1d5db; margin-left: 1.5rem;">
-              <li style="margin-bottom: 0.5rem;">✓ Professional narrator voices</li>
-              <li style="margin-bottom: 0.5rem;">✓ Character and personality voices</li>
-              <li style="margin-bottom: 0.5rem;">✓ Multiple accents and languages</li>
-              <li style="margin-bottom: 0.5rem;">✓ Emotion-optimized voice profiles</li>
-            </ul>
+            <div class="bonus-card-content">
+              <img src="images/bio.png" alt="RocketBio" class="bonus-image" />
+              <div style="position: absolute; top: 20px; right: 20px; background: linear-gradient(135deg, #22c55e, #16a34a); color: white; font-size: 0.75rem; font-weight: 800; padding: 0.4rem 1rem; border-radius: 30px; letter-spacing: 0.05em; box-shadow: 0 10px 20px rgba(34, 197, 94, 0.3); transform: rotate(0deg); backdrop-filter: blur(5px); border: 1px solid rgba(255, 255, 255, 0.2); text-transform: uppercase; display: flex; align-items: center; justify-content: center;">
+                <span style="margin-right: 4px; font-size: 0.875rem;">🎁</span> Yours FREE
+              </div>
+              <h3 class="gradient-text text-2xl font-bold mb-2">RocketBio</h3>
+              <div style="color: #d8b4fe; font-size: 1.125rem; font-weight: 700; margin-bottom: 1rem;">Value: $347</div>
+              <p style="color: #d1d5db; margin-bottom: 1rem;">
+                The world leader in bio link pages system, with powerful customization options and 16 different blocks.
+              </p>
+              <ul style="color: #d1d5db; margin-left: 1.5rem;">
+                <li style="margin-bottom: 0.5rem;">✓ Tracking pixels and pre-made templates</li>
+                <li style="margin-bottom: 0.5rem;">✓ Highly customizable themes, branding, and fonts</li>
+                <li style="margin-bottom: 0.5rem;">✓ Advanced targeting and protection options</li>
+                <li style="margin-bottom: 0.5rem;">✓ 16 different bio link blocks including social, multimedia and payment options</li>
+              </ul>
+            </div>
           </div>
 
-          <!-- Bonus 3 -->
+          <!-- Bonus 3: RocketAcademy -->
           <div class="bonus-card">
-            <div class="bonus-icon">📊</div>
-            <h3 class="gradient-text text-2xl font-bold mb-2">Video Marketing Mastery Course</h3>
-            <div style="color: #d8b4fe; font-size: 1.125rem; font-weight: 700; margin-bottom: 1rem;">Value: $697</div>
-            <p style="color: #d1d5db; margin-bottom: 1rem;">
-              My comprehensive 6-module course revealing the exact strategies I use to create high-converting 
-              AI videos that drive traffic, leads, and sales across multiple platforms.
-            </p>
-            <ul style="color: #d1d5db; margin-left: 1.5rem;">
-              <li style="margin-bottom: 0.5rem;">✓ Platform-specific optimization tricks</li>
-              <li style="margin-bottom: 0.5rem;">✓ Viral trigger techniques</li>
-              <li style="margin-bottom: 0.5rem;">✓ Call-to-action frameworks that convert</li>
-              <li style="margin-bottom: 0.5rem;">✓ Analytics and optimization strategies</li>
-            </ul>
+            <div class="bonus-card-content">
+              <img src="images/academy.png" alt="RocketAcademy" class="bonus-image" />
+              <div style="position: absolute; top: 20px; right: 20px; background: linear-gradient(135deg, #22c55e, #16a34a); color: white; font-size: 0.75rem; font-weight: 800; padding: 0.4rem 1rem; border-radius: 30px; letter-spacing: 0.05em; box-shadow: 0 10px 20px rgba(34, 197, 94, 0.3); transform: rotate(0deg); backdrop-filter: blur(5px); border: 1px solid rgba(255, 255, 255, 0.2); text-transform: uppercase; display: flex; align-items: center; justify-content: center;">
+                <span style="margin-right: 4px; font-size: 0.875rem;">🎁</span> Yours FREE
+              </div>
+              <h3 class="gradient-text text-2xl font-bold mb-2">RocketAcademy</h3>
+              <div style="color: #d8b4fe; font-size: 1.125rem; font-weight: 700; margin-bottom: 1rem;">Value: $697</div>
+              <p style="color: #d1d5db; margin-bottom: 1rem;">
+                The finest course builder platform that lets you manage courses of various categories with an easy user interface.
+              </p>
+              <ul style="color: #d1d5db; margin-left: 1.5rem;">
+                <li style="margin-bottom: 0.5rem;">✓ Complete course management system</li>
+                <li style="margin-bottom: 0.5rem;">✓ Easy chapter and content organization</li>
+                <li style="margin-bottom: 0.5rem;">✓ Streamlined learning experience</li>
+                <li style="margin-bottom: 0.5rem;">✓ User-friendly interface for both creators and students</li>
+              </ul>
+            </div>
           </div>
 
-          <!-- Bonus 4 -->
+          <!-- Bonus 4: RocketProof -->
           <div class="bonus-card">
-            <div class="bonus-icon">🔐</div>
-            <h3 class="gradient-text text-2xl font-bold mb-2">Private Strategy Call</h3>
-            <div style="color: #d8b4fe; font-size: 1.125rem; font-weight: 700; margin-bottom: 1rem;">Value: $497</div>
-            <p style="color: #d1d5db; margin-bottom: 1rem;">
-              Book a private 30-minute strategy call with one of our senior AI video specialists who will help 
-              you create a customized plan for your business, niche, or specific marketing goals.
-            </p>
-            <ul style="color: #d1d5db; margin-left: 1.5rem;">
-              <li style="margin-bottom: 0.5rem;">✓ Personalized content strategy</li>
-              <li style="margin-bottom: 0.5rem;">✓ Technical implementation guidance</li>
-              <li style="margin-bottom: 0.5rem;">✓ Niche-specific optimization advice</li>
-              <li style="margin-bottom: 0.5rem;">✓ ROI-focused action plan</li>
-            </ul>
+            <div class="bonus-card-content">
+              <img src="images/proof.png" alt="RocketProof" class="bonus-image" />
+              <div style="position: absolute; top: 20px; right: 20px; background: linear-gradient(135deg, #22c55e, #16a34a); color: white; font-size: 0.75rem; font-weight: 800; padding: 0.4rem 1rem; border-radius: 30px; letter-spacing: 0.05em; box-shadow: 0 10px 20px rgba(34, 197, 94, 0.3); transform: rotate(0deg); backdrop-filter: blur(5px); border: 1px solid rgba(255, 255, 255, 0.2); text-transform: uppercase; display: flex; align-items: center; justify-content: center;">
+                <span style="margin-right: 4px; font-size: 0.875rem;">🎁</span> Yours FREE
+              </div>
+              <h3 class="gradient-text text-2xl font-bold mb-2">RocketProof</h3>
+              <div style="color: #d8b4fe; font-size: 1.125rem; font-weight: 700; margin-bottom: 1rem;">Value: $497</div>
+              <p style="color: #d1d5db; margin-bottom: 1rem;">
+                A powerful notification system with 15 included widgets to boost engagement and conversions on your website.
+              </p>
+              <ul style="color: #d1d5db; margin-left: 1.5rem;">
+                <li style="margin-bottom: 0.5rem;">✓ Unlimited campaigns and notifications</li>
+                <li style="margin-bottom: 0.5rem;">✓ Custom branded, static & dynamic notifications</li>
+                <li style="margin-bottom: 0.5rem;">✓ Multiple trigger options (actions, pages, devices)</li>
+                <li style="margin-bottom: 0.5rem;">✓ Advanced statistics and data capturing</li>
+              </ul>
+            </div>
+          </div>
+          
+          <!-- Original Bonus: Pro Video Templates Pack -->
+          <div class="bonus-card">
+            <div class="bonus-card-content">
+              <div class="bonus-icon">🎬</div>
+              <div style="position: absolute; top: 20px; right: 20px; background: linear-gradient(135deg, #22c55e, #16a34a); color: white; font-size: 0.75rem; font-weight: 800; padding: 0.4rem 1rem; border-radius: 30px; letter-spacing: 0.05em; box-shadow: 0 10px 20px rgba(34, 197, 94, 0.3); transform: rotate(0deg); backdrop-filter: blur(5px); border: 1px solid rgba(255, 255, 255, 0.2); text-transform: uppercase; display: flex; align-items: center; justify-content: center;">
+                <span style="margin-right: 4px; font-size: 0.875rem;">🎁</span> Yours FREE
+              </div>
+              <h3 class="gradient-text text-2xl font-bold mb-2">Pro Video Templates Pack</h3>
+              <div style="color: #d8b4fe; font-size: 1.125rem; font-weight: 700; margin-bottom: 1rem;">Value: $497</div>
+              <p style="color: #d1d5db; margin-bottom: 1rem;">
+                Get 50+ professionally designed video templates specifically optimized for AI generation. 
+                These templates are proven to drive engagement and are ready to use with just a few clicks.
+              </p>
+              <ul style="color: #d1d5db; margin-left: 1.5rem;">
+                <li style="margin-bottom: 0.5rem;">✓ Social media optimized formats</li>
+                <li style="margin-bottom: 0.5rem;">✓ High-conversion sales templates</li>
+                <li style="margin-bottom: 0.5rem;">✓ Educational and training layouts</li>
+                <li style="margin-bottom: 0.5rem;">✓ Exclusive designs not available anywhere else</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Original Bonus: Premium Voice Library -->
+          <div class="bonus-card">
+            <div class="bonus-card-content">
+              <div class="bonus-icon">🎙️</div>
+              <div style="position: absolute; top: 20px; right: 20px; background: linear-gradient(135deg, #22c55e, #16a34a); color: white; font-size: 0.75rem; font-weight: 800; padding: 0.4rem 1rem; border-radius: 30px; letter-spacing: 0.05em; box-shadow: 0 10px 20px rgba(34, 197, 94, 0.3); transform: rotate(0deg); backdrop-filter: blur(5px); border: 1px solid rgba(255, 255, 255, 0.2); text-transform: uppercase; display: flex; align-items: center; justify-content: center;">
+                <span style="margin-right: 4px; font-size: 0.875rem;">🎁</span> Yours FREE
+              </div>
+              <h3 class="gradient-text text-2xl font-bold mb-2">Premium Voice Library</h3>
+              <div style="color: #d8b4fe; font-size: 1.125rem; font-weight: 700; margin-bottom: 1rem;">Value: $347</div>
+              <p style="color: #d1d5db; margin-bottom: 1rem;">
+                Access our exclusive collection of 100+ premium AI voices not available in the standard package. 
+                These voices have been handpicked for their clarity, emotion, and professional sound quality.
+              </p>
+              <ul style="color: #d1d5db; margin-left: 1.5rem;">
+                <li style="margin-bottom: 0.5rem;">✓ Professional narrator voices</li>
+                <li style="margin-bottom: 0.5rem;">✓ Character and personality voices</li>
+                <li style="margin-bottom: 0.5rem;">✓ Multiple accents and languages</li>
+                <li style="margin-bottom: 0.5rem;">✓ Emotion-optimized voice profiles</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Original Bonus: Video Marketing Mastery Course -->
+          <div class="bonus-card">
+            <div class="bonus-card-content">
+              <div class="bonus-icon">📊</div>
+              <div style="position: absolute; top: 20px; right: 20px; background: linear-gradient(135deg, #22c55e, #16a34a); color: white; font-size: 0.75rem; font-weight: 800; padding: 0.4rem 1rem; border-radius: 30px; letter-spacing: 0.05em; box-shadow: 0 10px 20px rgba(34, 197, 94, 0.3); transform: rotate(0deg); backdrop-filter: blur(5px); border: 1px solid rgba(255, 255, 255, 0.2); text-transform: uppercase; display: flex; align-items: center; justify-content: center;">
+                <span style="margin-right: 4px; font-size: 0.875rem;">🎁</span> Yours FREE
+              </div>
+              <h3 class="gradient-text text-2xl font-bold mb-2">Video Marketing Mastery Course</h3>
+              <div style="color: #d8b4fe; font-size: 1.125rem; font-weight: 700; margin-bottom: 1rem;">Value: $697</div>
+              <p style="color: #d1d5db; margin-bottom: 1rem;">
+                My comprehensive 6-module course revealing the exact strategies I use to create high-converting 
+                AI videos that drive traffic, leads, and sales across multiple platforms.
+              </p>
+              <ul style="color: #d1d5db; margin-left: 1.5rem;">
+                <li style="margin-bottom: 0.5rem;">✓ Platform-specific optimization tricks</li>
+                <li style="margin-bottom: 0.5rem;">✓ Viral trigger techniques</li>
+                <li style="margin-bottom: 0.5rem;">✓ Call-to-action frameworks that convert</li>
+                <li style="margin-bottom: 0.5rem;">✓ Analytics and optimization strategies</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Original Bonus: Private Strategy Call -->
+          <div class="bonus-card">
+            <div class="bonus-card-content">
+              <div class="bonus-icon">🔐</div>
+              <div style="position: absolute; top: 20px; right: 20px; background: linear-gradient(135deg, #22c55e, #16a34a); color: white; font-size: 0.75rem; font-weight: 800; padding: 0.4rem 1rem; border-radius: 30px; letter-spacing: 0.05em; box-shadow: 0 10px 20px rgba(34, 197, 94, 0.3); transform: rotate(0deg); backdrop-filter: blur(5px); border: 1px solid rgba(255, 255, 255, 0.2); text-transform: uppercase; display: flex; align-items: center; justify-content: center;">
+                <span style="margin-right: 4px; font-size: 0.875rem;">🎁</span> Yours FREE
+              </div>
+              <h3 class="gradient-text text-2xl font-bold mb-2">Private Strategy Call</h3>
+              <div style="color: #d8b4fe; font-size: 1.125rem; font-weight: 700; margin-bottom: 1rem;">Value: $497</div>
+              <p style="color: #d1d5db; margin-bottom: 1rem;">
+                Book a private 30-minute strategy call with one of our senior AI video specialists who will help 
+                you create a customized plan for your business, niche, or specific marketing goals.
+              </p>
+              <ul style="color: #d1d5db; margin-left: 1.5rem;">
+                <li style="margin-bottom: 0.5rem;">✓ Personalized content strategy</li>
+                <li style="margin-bottom: 0.5rem;">✓ Technical implementation guidance</li>
+                <li style="margin-bottom: 0.5rem;">✓ Niche-specific optimization advice</li>
+                <li style="margin-bottom: 0.5rem;">✓ ROI-focused action plan</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bonus Value Stack -->
+        <div style="max-width: 48rem; margin: 5rem auto; padding: 3rem; background: linear-gradient(145deg, rgba(30,30,30,0.5) 0%, rgba(20,20,20,0.7) 100%); border-radius: 1.5rem; position: relative; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), 0 0 80px rgba(255, 51, 102, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.05);">
+          <!-- Decorative corner elements -->
+          <div style="position: absolute; top: -10px; left: -10px; width: 40px; height: 40px; border-top: 3px solid rgba(255, 51, 102, 0.3); border-left: 3px solid rgba(255, 51, 102, 0.3); border-top-left-radius: 10px;"></div>
+          <div style="position: absolute; top: -10px; right: -10px; width: 40px; height: 40px; border-top: 3px solid rgba(255, 51, 102, 0.3); border-right: 3px solid rgba(255, 51, 102, 0.3); border-top-right-radius: 10px;"></div>
+          <div style="position: absolute; bottom: -10px; left: -10px; width: 40px; height: 40px; border-bottom: 3px solid rgba(255, 153, 51, 0.3); border-left: 3px solid rgba(255, 153, 51, 0.3); border-bottom-left-radius: 10px;"></div>
+          <div style="position: absolute; bottom: -10px; right: -10px; width: 40px; height: 40px; border-bottom: 3px solid rgba(255, 153, 51, 0.3); border-right: 3px solid rgba(255, 153, 51, 0.3); border-bottom-right-radius: 10px;"></div>
+          
+          <!-- Background glow effects -->
+          <div style="position: absolute; top: -20%; right: -20%; width: 60%; height: 60%; background: radial-gradient(circle, rgba(255, 51, 102, 0.1), transparent 70%); filter: blur(50px); z-index: 0;"></div>
+          <div style="position: absolute; bottom: -30%; left: -20%; width: 70%; height: 70%; background: radial-gradient(circle, rgba(255, 153, 51, 0.1), transparent 70%); filter: blur(60px); z-index: 0;"></div>
+          
+          <!-- Header with badge -->
+          <div style="position: relative; z-index: 2; text-align: center; margin-bottom: 2.5rem;">
+            <div style="position: absolute; top: -50px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, #FF3366, #FF9933); color: white; font-weight: 800; padding: 0.5rem 1.5rem; border-radius: 9999px; z-index: 10; white-space: nowrap; font-size: 0.875rem; box-shadow: 0 10px 25px rgba(255, 51, 102, 0.4); letter-spacing: 0.05em; text-transform: uppercase; display: flex; align-items: center; justify-content: center;">
+              <span style="background: rgba(255, 255, 255, 0.25); width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 8px;">
+                <span style="font-size: 14px;">💰</span>
+              </span>
+              Bonus Value Stack
+            </div>
+            
+            <h3 style="font-size: 2.25rem; font-weight: 800; margin-top: 0.5rem; background: linear-gradient(to right, #FFFFFF, #FFA666); -webkit-background-clip: text; background-clip: text; color: transparent; position: relative; display: inline-block;">
+              TOTAL VALUE: $3,885
+              <div style="position: absolute; bottom: -10px; left: 0; right: 0; height: 3px; background: linear-gradient(to right, rgba(255, 51, 102, 0.5), rgba(255, 153, 51, 0.5)); border-radius: 3px;"></div>
+            </h3>
+          </div>
+          
+          <!-- Value Stack Table with improved styling -->
+          <div style="position: relative; z-index: 2; background: rgba(20, 20, 20, 0.5); backdrop-filter: blur(10px); border-radius: 1rem; border: 1px solid rgba(255, 255, 255, 0.05); overflow: hidden; margin-bottom: 2rem;">
+            <!-- Table header -->
+            <div style="display: grid; grid-template-columns: 1fr auto; padding: 1rem 1.5rem; background: linear-gradient(to right, rgba(30, 30, 40, 0.7), rgba(30, 25, 50, 0.7)); border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
+              <div style="color: white; font-weight: 700; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em;">Bonus Item</div>
+              <div style="color: white; font-weight: 700; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; text-align: right;">Value</div>
+            </div>
+            
+            <!-- Table rows with hover effects -->
+            <div style="display: grid; grid-template-columns: 1fr auto; gap: 0;">
+              <div style="padding: 1rem 1.5rem; color: #d1d5db; font-size: 1.125rem; border-bottom: 1px solid rgba(255, 255, 255, 0.05); transition: all 0.2s; display: flex; align-items: center;">
+                <span style="display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; background: linear-gradient(135deg, rgba(255, 51, 102, 0.2), rgba(255, 153, 51, 0.2)); border-radius: 50%; margin-right: 12px; flex-shrink: 0;">1</span>
+                RocketQR
+              </div>
+              <div style="padding: 1rem 1.5rem; color: #FCD34D; font-size: 1.125rem; font-weight: 700; text-align: right; border-bottom: 1px solid rgba(255, 255, 255, 0.05); transition: all 0.2s;">$497</div>
+              
+              <div style="padding: 1rem 1.5rem; color: #d1d5db; font-size: 1.125rem; border-bottom: 1px solid rgba(255, 255, 255, 0.05); transition: all 0.2s; display: flex; align-items: center; background: rgba(255, 255, 255, 0.02);">
+                <span style="display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; background: linear-gradient(135deg, rgba(255, 51, 102, 0.2), rgba(255, 153, 51, 0.2)); border-radius: 50%; margin-right: 12px; flex-shrink: 0;">2</span>
+                RocketBio
+              </div>
+              <div style="padding: 1rem 1.5rem; color: #FCD34D; font-size: 1.125rem; font-weight: 700; text-align: right; border-bottom: 1px solid rgba(255, 255, 255, 0.05); transition: all 0.2s; background: rgba(255, 255, 255, 0.02);">$347</div>
+              
+              <div style="padding: 1rem 1.5rem; color: #d1d5db; font-size: 1.125rem; border-bottom: 1px solid rgba(255, 255, 255, 0.05); transition: all 0.2s; display: flex; align-items: center;">
+                <span style="display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; background: linear-gradient(135deg, rgba(255, 51, 102, 0.2), rgba(255, 153, 51, 0.2)); border-radius: 50%; margin-right: 12px; flex-shrink: 0;">3</span>
+                RocketAcademy
+              </div>
+              <div style="padding: 1rem 1.5rem; color: #FCD34D; font-size: 1.125rem; font-weight: 700; text-align: right; border-bottom: 1px solid rgba(255, 255, 255, 0.05); transition: all 0.2s;">$697</div>
+              
+              <div style="padding: 1rem 1.5rem; color: #d1d5db; font-size: 1.125rem; border-bottom: 1px solid rgba(255, 255, 255, 0.05); transition: all 0.2s; display: flex; align-items: center; background: rgba(255, 255, 255, 0.02);">
+                <span style="display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; background: linear-gradient(135deg, rgba(255, 51, 102, 0.2), rgba(255, 153, 51, 0.2)); border-radius: 50%; margin-right: 12px; flex-shrink: 0;">4</span>
+                RocketProof
+              </div>
+              <div style="padding: 1rem 1.5rem; color: #FCD34D; font-size: 1.125rem; font-weight: 700; text-align: right; border-bottom: 1px solid rgba(255, 255, 255, 0.05); transition: all 0.2s; background: rgba(255, 255, 255, 0.02);">$497</div>
+              
+              <div style="padding: 1rem 1.5rem; color: #d1d5db; font-size: 1.125rem; border-bottom: 1px solid rgba(255, 255, 255, 0.05); transition: all 0.2s; display: flex; align-items: center;">
+                <span style="display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; background: linear-gradient(135deg, rgba(255, 51, 102, 0.2), rgba(255, 153, 51, 0.2)); border-radius: 50%; margin-right: 12px; flex-shrink: 0;">5</span>
+                Pro Video Templates Pack
+              </div>
+              <div style="padding: 1rem 1.5rem; color: #FCD34D; font-size: 1.125rem; font-weight: 700; text-align: right; border-bottom: 1px solid rgba(255, 255, 255, 0.05); transition: all 0.2s;">$497</div>
+              
+              <div style="padding: 1rem 1.5rem; color: #d1d5db; font-size: 1.125rem; border-bottom: 1px solid rgba(255, 255, 255, 0.05); transition: all 0.2s; display: flex; align-items: center; background: rgba(255, 255, 255, 0.02);">
+                <span style="display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; background: linear-gradient(135deg, rgba(255, 51, 102, 0.2), rgba(255, 153, 51, 0.2)); border-radius: 50%; margin-right: 12px; flex-shrink: 0;">6</span>
+                Premium Voice Library
+              </div>
+              <div style="padding: 1rem 1.5rem; color: #FCD34D; font-size: 1.125rem; font-weight: 700; text-align: right; border-bottom: 1px solid rgba(255, 255, 255, 0.05); transition: all 0.2s; background: rgba(255, 255, 255, 0.02);">$347</div>
+              
+              <div style="padding: 1rem 1.5rem; color: #d1d5db; font-size: 1.125rem; border-bottom: 1px solid rgba(255, 255, 255, 0.05); transition: all 0.2s; display: flex; align-items: center;">
+                <span style="display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; background: linear-gradient(135deg, rgba(255, 51, 102, 0.2), rgba(255, 153, 51, 0.2)); border-radius: 50%; margin-right: 12px; flex-shrink: 0;">7</span>
+                Video Marketing Mastery Course
+              </div>
+              <div style="padding: 1rem 1.5rem; color: #FCD34D; font-size: 1.125rem; font-weight: 700; text-align: right; border-bottom: 1px solid rgba(255, 255, 255, 0.05); transition: all 0.2s;">$697</div>
+              
+              <div style="padding: 1rem 1.5rem; color: #d1d5db; font-size: 1.125rem; border-bottom: 1px solid rgba(255, 255, 255, 0.05); transition: all 0.2s; display: flex; align-items: center; background: rgba(255, 255, 255, 0.02);">
+                <span style="display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; background: linear-gradient(135deg, rgba(255, 51, 102, 0.2), rgba(255, 153, 51, 0.2)); border-radius: 50%; margin-right: 12px; flex-shrink: 0;">8</span>
+                Private Strategy Call
+              </div>
+              <div style="padding: 1rem 1.5rem; color: #FCD34D; font-size: 1.125rem; font-weight: 700; text-align: right; border-bottom: 1px solid rgba(255, 255, 255, 0.05); transition: all 0.2s; background: rgba(255, 255, 255, 0.02);">$497</div>
+            </div>
+          </div>
+          
+          <!-- Enhanced totals section with highlight animation -->
+          <div style="position: relative; z-index: 2; background: linear-gradient(to right, rgba(30, 30, 40, 0.5), rgba(20, 20, 30, 0.5)); border-radius: 1rem; border: 1px solid rgba(255, 255, 255, 0.1); padding: 1.5rem; margin-bottom: 2rem; overflow: hidden;">
+            <!-- Animated shine effect -->
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent); transform: translateX(-100%); animation: shine 3s infinite; z-index: 1;"></div>
+            
+            <div style="display: grid; grid-template-columns: 1fr auto; gap: 0.5rem; position: relative; z-index: 2;">
+              <div style="font-size: 1.5rem; font-weight: 700; color: white; display: flex; align-items: center;">
+                <span style="width: 32px; height: 32px; background: linear-gradient(135deg, #FF3366, #FF9933); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 12px; box-shadow: 0 4px 10px rgba(255, 51, 102, 0.3);">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: white;">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </span>
+                Total Value:
+              </div>
+              <div style="font-size: 1.75rem; font-weight: 800; color: #FCD34D; text-align: right; text-shadow: 0 2px 10px rgba(252, 211, 77, 0.3);">$3,885</div>
+              
+              <div style="font-size: 1.5rem; font-weight: 700; color: white; margin-top: 0.5rem; display: flex; align-items: center;">
+                <span style="width: 32px; height: 32px; background: linear-gradient(135deg, #22c55e, #16a34a); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 12px; box-shadow: 0 4px 10px rgba(34, 197, 94, 0.3);">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: white;">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </span>
+                You Pay:
+              </div>
+              <div style="font-size: 1.75rem; font-weight: 800; color: #22c55e; text-align: right; text-shadow: 0 2px 10px rgba(34, 197, 94, 0.3);">$0</div>
+            </div>
+          </div>
+          
+          <!-- Enhanced free bonus badge -->
+          <div style="position: relative; z-index: 2; text-align: center; transform: scale(1.05);">
+            <div style="background: rgba(34, 197, 94, 0.1); backdrop-filter: blur(10px); border: 1px solid rgba(34, 197, 94, 0.3); border-radius: 1rem; padding: 1.25rem; display: inline-block; position: relative; overflow: hidden; box-shadow: 0 10px 30px rgba(34, 197, 94, 0.2);">
+              <!-- Pulsing glow background -->
+              <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at center, rgba(34, 197, 94, 0.15), transparent 70%); filter: blur(20px); animation: pulse 2s infinite; z-index: -1;"></div>
+              
+              <p style="color: #22c55e; font-weight: 800; font-size: 1.125rem; margin: 0; display: flex; align-items: center; justify-content: center;">
+                <span style="display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; background: linear-gradient(135deg, #22c55e, #16a34a); border-radius: 50%; margin-right: 12px; box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3);">
+                  <span style="font-size: 18px;">🎁</span>
+                </span>
+                All Bonuses Included FREE With Your Purchase!
+              </p>
+            </div>
           </div>
         </div>
 
         <!-- Testimonial -->
         <div class="testimonial">
-          <p style="color: #d1d5db; font-size: 1.125rem; line-height: 1.7;">
+          <p style="color: #d1d5db; font-size: 1.25rem; line-height: 1.7; position: relative;">
             "The bonus templates alone were worth the investment! I was able to create a product launch video that generated over $12,000 in sales in just 48 hours. The voice library made my videos sound truly professional, and the strategy call helped me fine-tune my approach perfectly."
           </p>
-          <div style="margin-top: 1rem; font-weight: 700; color: white;">— Michael R., Digital Marketing Consultant</div>
+          <div style="margin-top: 2rem; font-weight: 700; color: white; font-size: 1.125rem; display: flex; align-items: center;">
+            <span style="display: inline-block; width: 2.5rem; height: 2px; background: linear-gradient(to right, #FF3366, #FF9933); margin-right: 1rem;"></span>
+            Michael R., Digital Marketing Consultant
+          </div>
         </div>
+
+        <!-- Founder Section -->
+        <section class="founder-section my-16">
+          <div class="founder-card">
+            <div class="flex flex-col md:flex-row items-center gap-8">
+              <div class="founder-image-wrapper">
+                <img 
+                  src="https://media.licdn.com/dms/image/v2/D4D03AQHqpHmkVhjIHQ/profile-displayphoto-shrink_200_200/B4DZPekzYpGoAY-/0/1734606010270?e=2147483647&v=beta&t=vVxWCd5K4T3ykzf2YmOkkbQl9ZMecPFMdwhuvmxHXH0" 
+                  alt="Adrian Isfan - Founder" 
+                  class="founder-image"
+                  onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'120\' height=\'120\' viewBox=\'0 0 120 120\'%3E%3Ccircle cx=\'60\' cy=\'60\' r=\'50\' fill=\'%234338CA\' /%3E%3Ccircle cx=\'60\' cy=\'45\' r=\'15\' fill=\'%23FFF\' /%3E%3Cpath d=\'M30,95 Q60,65 90,95 Q60,120 30,95 Z\' fill=\'%23FFF\' /%3E%3C/svg%3E';"
+                />
+              </div>
+              
+              <div class="founder-content">
+                <div>
+                  <span class="founder-label">FROM THE DESK OF</span>
+                  <h2 class="founder-name">Adrian Isfan</h2>
+                  <h3 class="founder-subtitle">Your 7-Figure AI Marketing Expert, Partner & Friend</h3>
+                  <p class="founder-bio">
+                    I'm a visionary entrepreneur and AI technology pioneer with a passion for creating 
+                    innovative solutions that help businesses like yours grow and thrive. 
+                  </p>
+                  <p class="founder-bio mt-4">
+                    With over a decade of experience in software development and business automation, 
+                    I've built multiple successful SaaS platforms that are transforming how businesses 
+                    leverage AI for better results and higher profits.
+                  </p>
+                </div>
+                
+                <div class="brands-showcase">
+                  <p class="brands-title">Creator of:</p>
+                  <div class="brands-grid">
+                    <div class="brand-item">
+                      <div class="brand-logo-container">
+                        <img 
+                          src="https://callfluent.com/wp-content/themes/callfluent2023/assets/marketing/images/logo.svg" 
+                          alt="CallFluent AI Logo" 
+                          class="brand-logo"
+                          onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'120\' height=\'30\' viewBox=\'0 0 120 30\'%3E%3Crect width=\'120\' height=\'30\' fill=\'%23333\' /%3E%3Ctext x=\'60\' y=\'20\' font-family=\'Arial\' font-size=\'12\' fill=\'%23FFF\' text-anchor=\'middle\'%3ECallFluent AI%3C/text%3E%3C/svg%3E';"
+                        />
+                      </div>
+                      <p class="brand-description">AI-Powered Call Center Solutions</p>
+                    </div>
+                    <div class="brand-item">
+                      <div class="brand-logo-container">
+                        <img 
+                          src="https://creativio.io/wp-content/uploads/2023/08/logo_white_transparent.png" 
+                          alt="Creativio AI Logo" 
+                          class="brand-logo"
+                          onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'120\' height=\'30\' viewBox=\'0 0 120 30\'%3E%3Crect width=\'120\' height=\'30\' fill=\'%23333\' /%3E%3Ctext x=\'60\' y=\'20\' font-family=\'Arial\' font-size=\'12\' fill=\'%23FFF\' text-anchor=\'middle\'%3ECreativio AI%3C/text%3E%3C/svg%3E';"
+                        />
+                      </div>
+                      <p class="brand-description">Creative AI Content Generation</p>
+                    </div>
+                    <div class="brand-item">
+                      <div class="brand-logo-container">
+                        <img 
+                          src="https://app.localio.ai/app-assets/images/logos/color_logo_full_size.png" 
+                          alt="Localio AI Logo" 
+                          class="brand-logo"
+                          onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'120\' height=\'30\' viewBox=\'0 0 120 30\'%3E%3Crect width=\'120\' height=\'30\' fill=\'%23333\' /%3E%3Ctext x=\'60\' y=\'20\' font-family=\'Arial\' font-size=\'12\' fill=\'%23FFF\' text-anchor=\'middle\'%3ELocalio AI%3C/text%3E%3C/svg%3E';"
+                        />
+                      </div>
+                      <p class="brand-description">Local Business AI Marketing Platform</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         <!-- Guarantee Box -->
         <div class="guarantee-box">
-          <div style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.75rem; background: linear-gradient(to right, #FDE68A, #FCD34D); -webkit-background-clip: text; background-clip: text; color: transparent;">
+          <div style="position: absolute; top: 1.5rem; right: 1.5rem; width: 5rem; height: 5rem;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="rgba(253, 230, 138, 0.6)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"></path>
+              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1Z"></path>
+            </svg>
+          </div>
+          
+          <div class="guarantee-title">
             100% Satisfaction Guarantee
           </div>
-          <p style="color: #d1d5db;">
+          
+          <p class="guarantee-text">
             If you're not completely satisfied with these bonuses, simply contact our support team 
             within 30 days for a complete refund. We stand behind the quality of these resources 
             and are confident they'll exceed your expectations.
           </p>
+          
+          <div style="margin-top: 2rem;">
+            <a href="https://creativio.io/Join-RocketVideosAI" class="btn-primary" style="padding: 1rem 2rem; font-size: 1.125rem;">
+              Claim Your $3,885 Bonus Package Now
+            </a>
+          </div>
         </div>
       </div>
 
       <!-- CTA Section -->
       <section class="cta-section">
         <div class="section-container">
-          <h2 style="font-size: 2.25rem; font-weight: 700; margin-bottom: 1.5rem; background: linear-gradient(to right, #FFFFFF, #FFA666); -webkit-background-clip: text; background-clip: text; color: transparent;">
-            Get Rocket Video AI + All Bonuses Today
-          </h2>
-          <p style="font-size: 1.25rem; color: #d1d5db; max-width: 48rem; margin: 0 auto 2rem;">
-            Don't miss out on this limited-time offer. Secure your access to Rocket Video AI 
-            and claim all $2,000 worth of exclusive bonuses now!
-          </p>
-          <a href="https://creativio.io/Join-RocketVideosAI" class="btn-primary">
-            CLAIM YOUR BONUSES NOW
-          </a>
-          <p style="font-size: 0.875rem; color: #6b7280; margin-top: 1rem;">
-            * Bonuses are delivered instantly upon successful registration
-          </p>
+          <div style="max-width: 48rem; margin: 0 auto;">
+            <h2 style="font-size: 3rem; font-weight: 800; margin-bottom: 1.5rem; background: linear-gradient(to right, #FFFFFF, #FFA666); -webkit-background-clip: text; background-clip: text; color: transparent;">
+              Join Rocket Video AI Today & Get $3,885 Worth of Exclusive Bonuses
+            </h2>
+            
+            <p style="font-size: 1.25rem; color: #d1d5db; margin: 0 auto 3rem; line-height: 1.6;">
+              Don't miss out on this limited-time offer. Get access to Rocket Video AI
+              and all 8 powerful bonuses instantly when you register now!
+            </p>
+            
+            <div style="position: relative; z-index: 1;">
+              <a href="https://creativio.io/Join-RocketVideosAI" class="btn-primary" style="font-size: 1.5rem; padding: 1.5rem 3rem; margin-bottom: 2rem; box-shadow: 0 15px 30px rgba(255, 51, 102, 0.3);">
+                GET ROCKET VIDEO AI + $3,885 BONUS PACKAGE NOW
+              </a>
+              
+              <div style="position: absolute; width: 120%; height: 120%; top: -10%; left: -10%; background: radial-gradient(circle, rgba(255, 51, 102, 0.15), transparent 70%); z-index: -1; filter: blur(20px);"></div>
+            </div>
+            
+            <p style="font-size: 0.875rem; color: #9ca3af; margin-top: 1.5rem;">
+              * All bonuses are delivered instantly upon successful registration
+            </p>
+            
+            <!-- Mini Countdown -->
+            <div class="countdown-wrapper" style="max-width: 28rem; margin: 3rem auto 0; padding: 1.5rem;">
+              <h3 style="text-align: center; font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem; color: white;">Special Offer Expires In:</h3>
+              <div class="countdown-grid" id="countdown-mini">
+                <div class="countdown-item">
+                  <div class="countdown-number" id="days-mini">00</div>
+                  <div class="countdown-label">Days</div>
+                </div>
+                <div class="countdown-item">
+                  <div class="countdown-number" id="hours-mini">00</div>
+                  <div class="countdown-label">Hours</div>
+                </div>
+                <div class="countdown-item">
+                  <div class="countdown-number" id="minutes-mini">00</div>
+                  <div class="countdown-label">Minutes</div>
+                </div>
+                <div class="countdown-item">
+                  <div class="countdown-number" id="seconds-mini">00</div>
+                  <div class="countdown-label">Seconds</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </main>
@@ -513,7 +2288,7 @@
       // Set the countdown date to April 5th, 2025 at 10:00 AM EST
       const countDownDate = new Date("Apr 5, 2025 10:00:00 EST").getTime();
       
-      // Update the countdown every 1 second
+      // Update both countdown timers every 1 second
       const countdownTimer = setInterval(function() {
         const now = new Date().getTime();
         const distance = countDownDate - now;
@@ -524,18 +2299,276 @@
         const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
         
-        // Display the results
-        document.getElementById("days").innerHTML = days.toString().padStart(2, '0');
-        document.getElementById("hours").innerHTML = hours.toString().padStart(2, '0');
-        document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, '0');
-        document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, '0');
+        // Format for display with leading zeros
+        const daysStr = days.toString().padStart(2, '0');
+        const hoursStr = hours.toString().padStart(2, '0');
+        const minutesStr = minutes.toString().padStart(2, '0');
+        const secondsStr = seconds.toString().padStart(2, '0');
+        
+        // Update main countdown
+        if (document.getElementById("days")) {
+          document.getElementById("days").innerHTML = daysStr;
+          document.getElementById("hours").innerHTML = hoursStr;
+          document.getElementById("minutes").innerHTML = minutesStr;
+          document.getElementById("seconds").innerHTML = secondsStr;
+        }
+        
+        // Update mini countdown
+        if (document.getElementById("days-mini")) {
+          document.getElementById("days-mini").innerHTML = daysStr;
+          document.getElementById("hours-mini").innerHTML = hoursStr;
+          document.getElementById("minutes-mini").innerHTML = minutesStr;
+          document.getElementById("seconds-mini").innerHTML = secondsStr;
+        }
         
         // If the countdown is over
         if (distance < 0) {
           clearInterval(countdownTimer);
-          document.getElementById("countdown").innerHTML = "<div style='text-align: center; font-size: 1.5rem; color: #ef4444; font-weight: 700;'>OFFER EXPIRED</div>";
+          
+          // Update both countdown displays
+          if (document.getElementById("countdown")) {
+            document.getElementById("countdown").innerHTML = "<div style='text-align: center; font-size: 1.5rem; color: #ef4444; font-weight: 700;'>OFFER EXPIRED</div>";
+          }
+          
+          if (document.getElementById("countdown-mini")) {
+            document.getElementById("countdown-mini").innerHTML = "<div style='text-align: center; font-size: 1.25rem; color: #ef4444; font-weight: 700;'>OFFER EXPIRED</div>";
+          }
         }
       }, 1000);
+      
+      // Simple Particle Animation for Hero Section
+      document.addEventListener("DOMContentLoaded", function() {
+        const particlesContainer = document.querySelector('.particles-container');
+        if (!particlesContainer) return;
+        
+        // Create particles
+        const particleCount = 20;
+        for (let i = 0; i < particleCount; i++) {
+          createParticle(particlesContainer);
+        }
+        
+        function createParticle(container) {
+          const particle = document.createElement('div');
+          
+          // Random size between 2 and 6px
+          const size = Math.random() * 4 + 2;
+          
+          // Random position
+          const xPos = Math.random() * 100;
+          const yPos = Math.random() * 100;
+          
+          // Random opacity
+          const opacity = Math.random() * 0.5 + 0.1;
+          
+          // Random color (pinks, purples, oranges)
+          const colors = ['#FF3366', '#FF9933', '#6d28d9', '#9333ea'];
+          const color = colors[Math.floor(Math.random() * colors.length)];
+          
+          // Apply styles
+          particle.style.position = 'absolute';
+          particle.style.width = `${size}px`;
+          particle.style.height = `${size}px`;
+          particle.style.borderRadius = '50%';
+          particle.style.background = color;
+          particle.style.opacity = opacity.toString();
+          particle.style.left = `${xPos}%`;
+          particle.style.top = `${yPos}%`;
+          particle.style.filter = 'blur(1px)';
+          
+          // Animation duration between 15 and 30 seconds
+          const duration = Math.random() * 15 + 15;
+          
+          // Animation
+          particle.style.animation = `floatParticle ${duration}s linear infinite`;
+          particle.style.animationDelay = `-${Math.random() * duration}s`;
+          
+          // Add to container
+          container.appendChild(particle);
+        }
+        
+        // Add keyframe animation to the document
+        const style = document.createElement('style');
+        style.textContent = `
+          @keyframes floatParticle {
+            0% {
+              transform: translateY(0) translateX(0) rotate(0deg);
+            }
+            25% {
+              transform: translateY(-20px) translateX(10px) rotate(90deg);
+            }
+            50% {
+              transform: translateY(-40px) translateX(-10px) rotate(180deg);
+            }
+            75% {
+              transform: translateY(-20px) translateX(-20px) rotate(270deg);
+            }
+            100% {
+              transform: translateY(0) translateX(0) rotate(360deg);
+            }
+          }
+        `;
+        document.head.appendChild(style);
+      });
+      
+      // Mobile menu toggle functionality
+      document.addEventListener("DOMContentLoaded", function() {
+        // Video player functionality
+        const videoOverlay = document.getElementById('video-overlay');
+        const heroVideo = document.getElementById('hero-video');
+        
+        if (videoOverlay && heroVideo) {
+          // Ensure proper iframe sizing
+          heroVideo.style.position = 'absolute';
+          heroVideo.style.top = '0';
+          heroVideo.style.left = '0';
+          heroVideo.style.width = '100%';
+          heroVideo.style.height = '100%';
+          heroVideo.style.border = '0';
+          
+          videoOverlay.addEventListener('click', function() {
+            // Get Vimeo player
+            const iframe = heroVideo;
+            const player = new Vimeo.Player(iframe);
+            
+            // Play the video
+            player.play().then(function() {
+              // Hide the overlay once video starts playing
+              videoOverlay.style.opacity = '0';
+              setTimeout(function() {
+                videoOverlay.style.display = 'none';
+              }, 700);
+            }).catch(function(error) {
+              console.error('Error playing the video:', error);
+            });
+          });
+        }
+        
+        // Handle window resize for responsive video
+        function handleResize() {
+          const videoContainer = document.querySelector('.video-container');
+          if (videoContainer) {
+            const width = videoContainer.offsetWidth;
+            const height = width * (9/16); // 16:9 aspect ratio
+            videoContainer.style.height = `${height}px`;
+          }
+        }
+        
+        window.addEventListener('resize', handleResize);
+        handleResize(); // Initial call
+        
+        const menuToggle = document.getElementById('menu-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        
+        if (menuToggle && navMenu) {
+          menuToggle.addEventListener('click', function() {
+            menuToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
+          });
+        }
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+          const isClickInsideMenu = navMenu.contains(event.target);
+          const isClickOnToggle = menuToggle.contains(event.target);
+          
+          if (!isClickInsideMenu && !isClickOnToggle && navMenu.classList.contains('active')) {
+            menuToggle.classList.remove('active');
+            navMenu.classList.remove('active');
+            document.body.classList.remove('menu-open');
+          }
+        });
+        
+        // Sticky header on scroll
+        const header = document.getElementById('main-nav');
+        let lastScrollTop = 0;
+        
+        window.addEventListener('scroll', function() {
+          const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+          
+          if (scrollTop > 50) {
+            header.classList.add('header-scrolled');
+          } else {
+            header.classList.remove('header-scrolled');
+          }
+          
+          lastScrollTop = scrollTop;
+        });
+        
+        // Fix iframe attribute styling (since HTML conversion sometimes breaks inline attributes)
+        const videoIframe = document.querySelector(".video-container iframe");
+        if (videoIframe) {
+          videoIframe.style.position = "absolute";
+          videoIframe.style.top = "0";
+          videoIframe.style.left = "0";
+          videoIframe.style.width = "100%";
+          videoIframe.style.height = "100%";
+        }
+        
+        const videoContainer = document.querySelector(".video-container > div");
+        if (videoContainer) {
+          videoContainer.style.padding = "56.25% 0 0 0";
+          videoContainer.style.position = "relative";
+        }
+        
+        // Add smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+              // Close mobile menu if open
+              if (navMenu.classList.contains('active')) {
+                menuToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.classList.remove('menu-open');
+              }
+              
+              // Scroll to target with offset for header
+              const headerHeight = header.offsetHeight;
+              const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
+              
+              window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+              });
+            }
+          });
+        });
+        
+        // Add subtle animation on scroll
+        const animateOnScroll = function() {
+          const elements = document.querySelectorAll('.bonus-card, .testimonial, .countdown-wrapper, .guarantee-box, .founder-card');
+          
+          elements.forEach(element => {
+            const elementPosition = element.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+            
+            if (elementPosition < windowHeight - 100) {
+              element.style.opacity = '1';
+              element.style.transform = 'translateY(0)';
+            }
+          });
+        };
+        
+        // Set initial styles for animation
+        const elementsToAnimate = document.querySelectorAll('.bonus-card, .testimonial, .countdown-wrapper, .guarantee-box, .founder-card');
+        elementsToAnimate.forEach(element => {
+          element.style.opacity = '0';
+          element.style.transform = 'translateY(20px)';
+          element.style.transition = 'all 0.6s ease';
+        });
+        
+        // Run animation on scroll
+        window.addEventListener('scroll', animateOnScroll);
+        
+        // Run animation on page load
+        setTimeout(animateOnScroll, 100);
+      });
     </script>
 
     <!-- Vercel Analytics -->
