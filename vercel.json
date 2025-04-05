@@ -1,6 +1,19 @@
 {
-  "routes": [
-    { "src": "/bonuses", "dest": "/bonuses.html" }
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    }
   ],
-  "cleanUrls": true
+  "routes": [
+    { "src": "/(.*)", "dest": "/$1" }
+  ],
+  "github": {
+    "enabled": true,
+    "silent": false
+  }
 } 
